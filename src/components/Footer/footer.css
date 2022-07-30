@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    text-decoration: none;
+}
+.allFooter {
+    width: 100%;
+    height: 50vh;
+    padding-top: 20vh;
+    background-color: #f8f7f7;
+    /* background-color: #f16969; */
+    display: flex;
+}
+
+
+.footerLogo {
+    width: 20%;
+    height: 90%;
+    padding: 0 5%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+
+.footerLogo_logo {
+    width: 65%;
+    padding-bottom: 10px;   
+}
+
+.footerLogo_container {
+    padding: 20px 0;
+    display: flex;
+}
+.linkdin, .look_profile{
+    background-color: #006097;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin: 1px;
+}
+
+.linkdin {
+    border-radius: 4px 0 0 4px;
+}
+
+.look_profile:Hover {
+    cursor: pointer;
+}
+
+.footerLogo_container > div, .subscribe_youtube > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgb(201, 198, 198);
+    border-right: 1px solid rgb(201, 198, 198);
+    border-radius: 0 4px 4px 0;    
+    font-size: 14px;
+    background-color: white;
+    color: rgb(143, 140, 140);
+    padding: 0px 7px;
+    margin: 1px;
+}
+
+
+.subscribe_youtube {
+    display: flex;
+}
+
+.subscribe_youtube > button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    display: flex;
+}
+
+.subscribe_youtube > div {
+    border: 1px solid rgb(201, 198, 198);
+    border-left: none;
+    margin: 0;
+
+}
+
+.subscribe_youtube > button:hover {
+    cursor: pointer;
+    background: rgb(199, 2, 2);
+}
+
+.subscribe_youtube > button > div {
+    padding-left: 5px;
+}
+
+.contact_page {
+    width: 58%;
+    display: flex;
+}
+
+.contact_page > div {
+    width: 30%;
+}
+
+.contact_page h4 {
+    color: #042E76;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.contact_page p {
+    font-size: 18px;    
+}
+
+.visit {
+    padding-bottom: 20px;
+}
+
+.contact span {
+    padding-right: 3px;
+}
+
+.contact a {
+    color: black;
+}
+
+.contact a:hover {
+    border-bottom: 1px solid #042E76;    
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    letter-spacing: 1px;    
+}
+
+.menu a, .job_legal a {
+    color: black;
+    width: 70%;
+    padding-bottom: 6px;
+}
+
+.menu a:hover {
+    border-bottom: 1px solid #042E76;    
+}
+
+.job_legal > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.job {
+    padding-bottom: 20px;
+}
+
+.job_legal a:hover {
+    border-bottom: 1px solid #042E76;    
+}
