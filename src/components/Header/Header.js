@@ -20,7 +20,6 @@ import InputBase from '@mui/material/InputBase';
 import { useParams } from 'react-router-dom';
 
 
-
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -94,7 +93,7 @@ function DrawerAppBar(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box className='header' sx={{ display: 'flex' }}>
             <AppBar sx={{ backgroundColor: "white", color: "inherit" }} component="nav">
                 <Toolbar>
                     <IconButton
@@ -170,7 +169,6 @@ export default DrawerAppBar;
 /* import React, { useState } from 'react'
 import { navConf } from '../../_mock/navConfigs'
 import Logo from '../../assets/logo.svg'
-import "./headerStyles.css"
 import SearchPanel from './SearchPanel'
 
 const Header = () => {
