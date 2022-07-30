@@ -34,3 +34,10 @@
     
 }
 
+.sticky {
+    position: sticky !important;
+    top: 0;
+    transition: top 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+    top: 0px;
+}
+
