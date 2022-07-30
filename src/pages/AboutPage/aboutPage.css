@@ -1,0 +1,36 @@
+.article-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    position: relative;
+    /* column-gap: 10px; */
+}
+
+.article-container img {
+    /* background-size: cover;
+    overflow: hidden; */
+    /* position: relative; */
+    /* height: 90%; */
+    width: 100%;
+}
+
+.text-card {
+    background-color: #ffffff;
+    text-align: left;
+    /* position: absolute; */
+    /* left: 50%; */
+    padding-left: 25px;
+    height: 686px;
+}
+
+.text-card p {
+    padding-top: 25px;
+    width: 50%;
+}
+.article-container div{
+    /* width: 50%; */
+    position: absolute;
+    right: 0;
+    
+}
+

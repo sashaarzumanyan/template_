@@ -1,9 +1,15 @@
+import Header from "./components/Header/Header";
+import AboutUs from "./pages/AboutPage/AboutUs";
+import Main from "./pages/Main";
 
 
 function App() {
   return (
     <div className="App">
-      fdsfsdf
+      <Header />
+      <main>
+      <Main />
+      </main>
     </div>
   );
 }

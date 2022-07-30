@@ -1,0 +1,56 @@
+.searchDiv {
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 45%;
+    height: 100px;
+    right: 0px;
+    color: white;
+}
+/* .searchDiv:active{
+    outline: none;
+} */
+
+.searchInput {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    margin-left: 10px;
+    color: white;
+    font-size: large;
+}
+
+.inputParent {
+    width: 80%;
+}
+
+.searchInput:focus {
+    outline: none;
+}
+
+.closeBtn {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    border-right: 2px solid white;
+    width: 15%;
+}
+
+.closeBtn:hover {
+    cursor: pointer;
+}
+
+
+.enterBtn>button {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: large;
+}
+
+.enterBtn>button:hover {
+    cursor: pointer;
+}
