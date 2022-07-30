@@ -63,9 +63,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
-
 function DrawerAppBar(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -83,11 +80,10 @@ function DrawerAppBar(props) {
             </Typography>
             <Divider />
             <List>
-                {navItems.map((item) => (
+                {navConf.map((item) => (
                     <ListItem key={item.path} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
                             <ListItemText primary={item.title}  />
-                            <Typography>{item.title}</Typography>
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -146,7 +142,7 @@ function DrawerAppBar(props) {
                     }}
                     sx={{
                         display: { xs: 'block', lg: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%', color: "black" },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%', },
                     }}
                 >
                     {drawer}

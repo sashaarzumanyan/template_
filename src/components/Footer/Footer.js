@@ -1,16 +1,17 @@
 import React from 'react'
 import logo from './images/logo.svg'
-import linkedIn from './images/linkedin.png'
 import { FaLinkedinIn } from 'react-icons/fa';
-import { SiYoutube } from 'react-icons/si'
+import { SiYoutube } from 'react-icons/si';
+import { navConf } from '../../_mock/navConfigs';
 
 
 import './footer.css'
 
 const Footer = () => {
 
-    const menu = ["Home", "About Us", "Technical Assistance", "Procurement", "Projects", "Successful Stories",
-        "News", "Contacts"]
+    // const menu = ["Home", "About Us", "Technical Assistance", "Procurement", "Projects", "Successful Stories",
+    //     "News", "Contacts"]
+    // menun coment em arel nav configsi ov em map fracel
 
 
     return (
@@ -18,13 +19,13 @@ const Footer = () => {
 
             <div className='footerLogo'>
                 <div className='footerLogo_logo'>
-                    <img src={logo} />
+                    <img src={logo} alt="logo" />
                 </div>
 
                 <div className='footerLogo_container'>
                     <button className='linkdin'>
                         <FaLinkedinIn />
-                        <a target={"blank"} href="https://www.linkedin.com/"></a>
+                        <a target={"blank"} href="#"></a>
                     </button>
                     <button className='look_profile'>Отслеживать</button>
                     <div>1111</div>
@@ -69,7 +70,7 @@ const Footer = () => {
 
                 <div className='menu'>
                     <h4>Menu</h4>
-                    {menu.map((e) => <a key={e.id} href=''>{e}</a>)}
+                    {navConf.map((e, i) => <a key={i} href={e.path}>{e.title}</a>)}
                 </div>
 
 
