@@ -77,8 +77,8 @@ const Footer = () => {
                 <div className='job_legal'>
                     <div className='job'>
                         <h4>Job Opportunity</h4>
-                        <a href=''>Careers</a>
-                        <a href=''>Register your cv</a>
+                        <a href='#'>Careers</a>
+                        <a href='#'>Register your cv</a>
                     </div>
 
                     <div className='legal'>

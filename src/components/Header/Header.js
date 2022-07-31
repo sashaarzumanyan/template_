@@ -18,6 +18,7 @@ import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { useParams } from 'react-router-dom';
+import { useTransform, motion } from 'framer-motion';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -63,10 +64,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function DrawerAppBar(props) {
-    const { window } = props;
+    console.log(";;;;;;;;;;;", props.scrollY, props.offsetY);
+    const { window, scrollY, offsetY } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const params = useParams();
-    console.log(params);
+    const height = useTransform(scrollY, offsetY, [300, 50])
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -93,9 +94,9 @@ function DrawerAppBar(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box className='header' sx={{ display: 'flex' }}>
-            <AppBar sx={{ backgroundColor: "white", color: "inherit" }} component="nav">
-                <Toolbar>
+        <Box className='header' component={motion.div}  sx={{ display: 'flex', height: height }}>
+            <AppBar sx={{ backgroundColor: "white", color: "inherit", height: height }} component={motion.nav}>
+                <Toolbar component={motion.div}  sx={{ height: height }}>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -154,13 +155,6 @@ function DrawerAppBar(props) {
     );
 }
 
-DrawerAppBar.propTypes = {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window: PropTypes.func,
-};
 
 export default DrawerAppBar;
 

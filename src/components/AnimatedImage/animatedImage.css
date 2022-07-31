@@ -1,0 +1,68 @@
+.firstImg {
+    /* position: relative; */
+    animation-name: first;
+    animation-duration: 4s;
+}
+
+.firstImg img {
+    height: 460px;
+    width: 170px;
+}
+
+.secondImg {
+    /* position: relative; */
+    animation-name: second;
+    animation-duration: 4s;
+    /* right: 0; */
+}
+
+.secondImg img {
+    position: absolute;
+    right: 0;
+    height: 460px;
+    width: 170px;
+
+}
+
+.blueDiv div {
+   width: 100px; 
+   height: 200px;
+   background-color: blue;
+   position: absolute;
+   z-index: 15;
+   top: 449.5px;
+}
+
+/* @keyframes first {
+    0% {
+        left: 0px;
+        top: 500px;
+    }
+
+    50% {
+        left: 0px;
+        top: 200px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes second {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+
+    50% {
+        left: 200px;
+        top: 200px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+} */
