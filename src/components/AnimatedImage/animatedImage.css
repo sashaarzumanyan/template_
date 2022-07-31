@@ -1,39 +1,42 @@
 .firstImg {
-    /* position: relative; */
+    position: relative;
     animation-name: first;
     animation-duration: 4s;
 }
 
-.firstImg img {
-    height: 460px;
-    width: 170px;
+.img1 {
+    position: absolute;
+    height: 550px;
+    right: 0;
+    /* width: 170px; */
+    animation-name: second;
+    animation-duration: 1s;
 }
 
 .secondImg {
     /* position: relative; */
-    animation-name: second;
-    animation-duration: 4s;
     /* right: 0; */
 }
 
-.secondImg img {
+.img2 {
     position: absolute;
-    right: 0;
-    height: 460px;
-    width: 170px;
-
+    right: 300px;
+    top: 30px;
+    height: 520px;
+    
 }
 
-.blueDiv div {
-   width: 100px; 
-   height: 200px;
-   background-color: blue;
-   position: absolute;
-   z-index: 15;
-   top: 449.5px;
+.blueDiv {
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    background-color: blue;
+    z-index: 20;
+    right: 200px;
+    top: 350px;
 }
-
-/* @keyframes first {
+/* 
+@keyframes first {
     0% {
         left: 0px;
         top: 500px;
@@ -48,21 +51,30 @@
         left: 0px;
         top: 0px;
     }
-}
+} */
 
-@keyframes second {
+/* @keyframes second {
     0% {
-        left: 0px;
-        top: 0px;
+        width: 0px;
+    }
+
+    25% {
+        width: 80px;
     }
 
     50% {
-        left: 200px;
-        top: 200px;
+        width: 160px;
+    }
+
+    75% {
+        width: 240px;
+    }
+
+    90% {
+        width: 320px;
     }
 
     100% {
-        left: 0px;
-        top: 0px;
+        width: 403px;
     }
 } */

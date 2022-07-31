@@ -2,9 +2,9 @@ import { Grid } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import TechnicalCard from '../../components/technicalCard'
-import { technicalCards } from '../../_mock/technicalInfoCard'
+import { procurement } from '../../_mock/procurement'
 
-const Technical_Page = () => {
+const Procurement = () => {
 
     return (
         <>
@@ -16,7 +16,7 @@ const Technical_Page = () => {
                 fontWeight: "400",
                 margin: "0 0 5% 4%"
             }}>
-                EXPLORE OUR TECHNICAL ASSISTANCE ACTIVITES
+                EXPLORE OUR PROCUREMENT ACTIVITES
             </h1>
             <Box sx={{
                 width: "100%",
@@ -32,7 +32,7 @@ const Technical_Page = () => {
                     justifyContent: "center",
                     alignItems: "center",
                 }}>
-                    {technicalCards.map(({ title, img }) => {
+                    {procurement.map(({ title, img }) => {
                         return (
                             <Grid item xs={10} md={6}>
                                 <TechnicalCard title={title} img={img} />
@@ -46,4 +46,4 @@ const Technical_Page = () => {
     )
 }
 
-export default Technical_Page
+export default Procurement

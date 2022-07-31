@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    text-decoration: none;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    list-style-type: none;
+}
+
+.li {
+    list-style-type: none;
+    margin-bottom: 3px;
+}
+
+.menu a:hover {
+    border-bottom: 1px solid #042E76;
+    cursor: pointer;   
+}
+
+.container {
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .navLists {
+    width: 90%;
+    background-color: #fafafa;
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navLists > div {
+    width: 30%;
+}
+
+.lists > a {
+    padding: 0 10px;
+} */
+

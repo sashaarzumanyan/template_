@@ -17,7 +17,7 @@ import { navConf } from '../../_mock/navConfigs'
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useTransform, motion } from 'framer-motion';
 
 
@@ -64,14 +64,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function DrawerAppBar(props) {
-    console.log(";;;;;;;;;;;", props.scrollY, props.offsetY);
     const { window, scrollY, offsetY } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const height = useTransform(scrollY, offsetY, [300, 50])
+    const navigate = useNavigate()
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+
+    const handleNavigate = (path) => {
+        debugger
+        navigate(path)
+    }
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -94,9 +98,9 @@ function DrawerAppBar(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box className='header' component={motion.div}  sx={{ display: 'flex', height: height }}>
-            <AppBar sx={{ backgroundColor: "white", color: "inherit", height: height }} component={motion.nav}>
-                <Toolbar component={motion.div}  sx={{ height: height }}>
+        <Box className='header'  sx={{ display: 'flex' }}>
+            <AppBar sx={{ backgroundColor: "white", color: "inherit"}} >
+                <Toolbar >
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -115,7 +119,7 @@ function DrawerAppBar(props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', lg: 'block' } }}>
                         {navConf.map((item) => (
-                            <Button key={item.path} sx={{ color: 'inherit' }}>
+                            <Button onClick={()=> handleNavigate(item.path)} key={item.path} sx={{ color: 'inherit' }}>
                                 {item.title}
                             </Button>
                         ))}
