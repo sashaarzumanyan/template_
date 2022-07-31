@@ -1,7 +1,9 @@
 import React from 'react'
 import { Box, Grid, Link, Typography } from '@mui/material'
 import "./projects.css"
-import SouthIcon from '@mui/icons-material/South';
+import TechnicalImage from "../../assets/Technical image.jpg"
+import home2 from "../../assets/home2.jpg"
+import AnimatedImages from '../../components/AnimatedImage/AnimatedImages'
 
 const Projects = () => {
 
@@ -29,7 +31,7 @@ const Projects = () => {
     return (
         <Box>
             <Grid container>
-                <Grid item xs={6}
+                <Grid xs={12} md={3} lg={5}
                     sx={{
                         padding: "35px"
                     }}
@@ -70,7 +72,9 @@ const Projects = () => {
                     </Box>
                 </Grid>
 
-                <Grid item xs={6}></Grid>
+                <Grid item xs={12} md={9} lg={7} sx={{mt: {xs:4}, display:{xs: 'none', md: 'block'}}}>
+                    <AnimatedImages image1={home2} image2={TechnicalImage} />
+                </Grid>
             </Grid>
 
             {/* <Box className='navLists'>
