@@ -1,6 +1,9 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import AboutUs from './AboutPage/AboutUs';
+import Contact from './Contacts/Contact';
+import Procurement from './Procurement/Procurement';
+import Projects from './Projects/Projects';
 import Technical_Page from './Technical Assistance/Technical_Page';
 
 
@@ -11,6 +14,9 @@ const Main = () => {
         <Routes>
           <Route path='about-us' element={<AboutUs />} />
           <Route path='technical-assistance' element={<Technical_Page />} />
+          <Route path='procurement' element={<Procurement />} />
+          <Route path='projects' element={<Projects />} />
+          <Route path='home' element={<Contact />} />
         </Routes>
     </div>
   )

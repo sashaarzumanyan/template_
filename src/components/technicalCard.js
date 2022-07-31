@@ -25,14 +25,14 @@ const TechnicalCard = ({ title, img }) => {
                 variant="h5"
                 component="div"
                 sx={{
-                    width: '100%',
+                    width: '70%',
                     position: "absolute",
                     zIndex: 1,
                     bottom: "10%",
                     color: "white",
-                    textAlign: "center",
+                    textAlign: "start",
                     fontWeight: "600",
-
+                    paddingLeft: "30px",
 
                 }}>
                 {title}
