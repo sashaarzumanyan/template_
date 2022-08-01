@@ -1,4 +1,5 @@
 import { Card, CardMedia, Typography } from '@mui/material'
+import { motion } from "framer-motion"
 import React from 'react'
 
 const TechnicalCard = ({ title, img }) => {
@@ -6,21 +7,21 @@ const TechnicalCard = ({ title, img }) => {
 
         < Card
             sx={{
-                // display: "flex",
-                // flexDirection: "column",
-                // justifyContent: "flex-end",
-                // alignItems: "center",
                 position: "relative",
             }}>
 
-            <CardMedia sx={{
-                width: "100%"
+            <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}>
+                <CardMedia sx={{
+                    width: "100%"
 
-            }}
-                component="img"
-                alt="green iguana"
-                image={img}
-            />
+                }}
+                    component="img"
+                    alt="green iguana"
+                    image={img}
+                />
+            </motion.div>
             <Typography
                 variant="h5"
                 component="div"

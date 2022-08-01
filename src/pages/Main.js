@@ -6,6 +6,7 @@ import Contact from './Contacts/Contact';
 import Procurement from './Procurement/Procurement';
 import Projects from './Projects/Projects';
 import Technical_Page from './Technical Assistance/Technical_Page';
+import News from './News/News';
 
 
 
@@ -19,6 +20,7 @@ const Main = () => {
           <Route path='procurement' element={<Procurement />} />
           <Route path='projects' element={<Projects />} />
           <Route path='home' element={<Contact />} />
+          <Route path='news' element={<News />} />
         </Routes>
     </div>
   )
