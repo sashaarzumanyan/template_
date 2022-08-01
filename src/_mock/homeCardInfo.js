@@ -11,3 +11,54 @@ export const homeCardInfo = [
         title: "Explore Our Technical Assistance Activities"
     }
 ]
+
+export const storyCardInfo = [
+    {
+        image: test,
+        title: "Explore Our Procurement Activities"
+    },
+    {
+        image: teaPlanter,
+        title: "Explore Our Technical Assistance Activities"
+    },
+    {
+        image: test,
+        title: "Explore Our Procurement Activities"
+    },
+    {
+        image: teaPlanter,
+        title: "Explore Our Technical Assistance Activities"
+    },
+    {
+        image: test,
+        title: "Explore Our Procurement Activities"
+    },
+    {
+        image: teaPlanter,
+        title: "Explore Our Technical Assistance Activities"
+    },
+    {
+        image: test,
+        title: "Explore Our Procurement Activities"
+    },
+    {
+        image: teaPlanter,
+        title: "Explore Our Technical Assistance Activities"
+    },
+    {
+        image: test,
+        title: "Explore Our Procurement Activities"
+    },
+    {
+        image: teaPlanter,
+        title: "Explore Our Technical Assistance Activities"
+    },
+    {
+        image: test,
+        title: "Explore Our Procurement Activities"
+    },
+    {
+        image: teaPlanter,
+        title: "Explore Our Technical Assistance Activities"
+    },
+]

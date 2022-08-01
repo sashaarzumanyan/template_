@@ -3,21 +3,6 @@ import { motion } from 'framer-motion';
 import "./animatedImage.css"
 
 const AnimatedImages = ({ image1, image2 }) => {
-  // const [animate, setAnimate] = useState(true)
-
-  // const imageLoaded = () => {
-  //   setAnimate(false);
-  //   setTimeout(() => setPulsing(false), 600);
-  // };
-
-  // useEffect(()=>{
-  //   setTimeout(()=>{
-  //     setAnimate(true)
-  //   },500)
-  //   // return (
-  //   //   setAnimate(false)
-  //   // )
-  // },[])
 
   return (
     <div style={{ width: "100%" }} >

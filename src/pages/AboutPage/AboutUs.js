@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import './aboutPage.css'
 import Picture1 from '../../assets/picture1.jpg'
-import { Grid, Box, Typography, Paper } from '@mui/material'
+import { Grid, Box, Typography, Paper } from '@mui/material';
+import { useTranslation } from "react-i18next";
 import { articleInfo } from '../../_mock/aboutPageContext';
 import InfoArticle from '../../components/InfoArticle';
 import EmployeeCard from '../../components/EmployeeCard';
 
 
 const AboutUs = () => {
+  const {t} = useTranslation()
   const [users, setUsers] = useState()
   console.log(users);
 
@@ -21,7 +23,7 @@ const AboutUs = () => {
     <>
       <div className=''>
         {articleInfo.map((item, index) => {
-          return <InfoArticle image={item.image} text={item.text} title={item.title} index={index} />
+          return <InfoArticle image={item.image} text={index === 0 ? t("About_us"): item.text} title={item.title} index={index} />
         })}
       </div>
       <div>
