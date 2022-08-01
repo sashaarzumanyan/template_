@@ -9,6 +9,13 @@ import "./home.css";
 import HomeCard from '../../components/HomeCard';
 import homeImg from '../../assets/homeImg.png';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import Accredia from '../../assets/accredia.png'
+import Rina from '../../assets/rina.png'
+import Porfse from '../../assets/PORFSE.png'
+import Psr from '../../assets/psr.png'
+import Smartfish from '../../assets/smartfish.png'
+import { motion } from "framer-motion"
+
 
 const Home = () => {
 
@@ -17,7 +24,8 @@ const Home = () => {
         "Our Mission",
         "Where we work and our main clients",
         "Our Strength",
-        "Organisation and staff"]
+        "Organisation and staff"
+    ]
 
 
     return (
@@ -164,7 +172,7 @@ const Home = () => {
                                     padding: "5% 0"
                                 }}
                             >
-                                To register for the first time, click on “Register” and follow the instructions.<br/>
+                                To register for the first time, click on “Register” and follow the instructions.<br />
 
                                 If registered already, insert your username and password and click on “Login”, to upload your updated CV or to modify your contact details.
                             </Typography>
@@ -188,8 +196,81 @@ const Home = () => {
                             </Box>
                         </Box>
                     </Box>
-
                 </Box>
+            </Box>
+
+
+            <Box >
+                <h3 style={{
+                    color: "#042E76"
+                }}>Certifications - We are part of</h3>
+                <Grid container>
+                    <Grid item xs={3}>
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            style={{
+                                width:"300px",
+                                height:"300px",
+                            }}
+                        >
+                            <img src={Accredia} />
+                        </motion.div>
+                    </Grid>
+
+                    <Grid item xs={3}>
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            style={{
+                                width:"300px",
+                                height:"300px",
+                            }}
+                        >
+                            <img src={Rina} />
+                        </motion.div>
+                    </Grid>
+
+                    <Grid item xs={3}>
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            style={{
+                                width:"300px",
+                                height:"300px",
+                            }}
+                        >
+                            <img src={Porfse} />
+                        </motion.div>
+                    </Grid>
+
+                    <Grid item xs={3}>
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            style={{
+                                width:"300px",
+                                height:"300px",
+                            }}
+                        >
+                            <img src={Psr} />
+                        </motion.div>
+                    </Grid>
+
+                    <Grid item xs={3}>
+                        <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            style={{
+                                width:"300px",
+                                height:"300px",
+                            }}
+                        >
+                            <img src={Smartfish} />
+                        </motion.div>
+                    </Grid>
+
+                </Grid>
             </Box>
 
         </div>
