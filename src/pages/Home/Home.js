@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Stack, Typography } from '@mui/material';
+import { Box, CardMedia, Grid, Stack, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import AnimatedImages from '../../components/AnimatedImage/AnimatedImages';
 import home1 from "../../assets/home1.jpg";
@@ -7,6 +7,8 @@ import home2 from "../../assets/home2.jpg";
 import { homeCardInfo } from '../../_mock/homeCardInfo';
 import "./home.css";
 import HomeCard from '../../components/HomeCard';
+import homeImg from '../../assets/homeImg.png';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const Home = () => {
 
@@ -51,6 +53,145 @@ const Home = () => {
                     })}
                 </Grid>
             </div>
+
+            <Box sx={{
+                width: "90%",
+                padding: "5%",
+                display: "flex",
+                justifyContent: "space-between"
+            }}>
+                <Box sx={{
+                    width: "44%",
+                    height: "80vh",
+                    position: "relative"
+                }}>
+                    <CardMedia
+                        component="img"
+                        height="220"
+                        image={homeImg}
+                        alt="img"
+                        sx={{
+                            width: "100%",
+                            height: "100%"
+                        }}
+                    />
+                    <Box sx={{
+                        backgroundColor: "#f8f7f7",
+                        width: "20%",
+                        height: "60vh",
+                        zIndex: 3,
+                        position: "absolute",
+                        bottom: 0,
+                        right: "-14%"
+                    }}></Box>
+                </Box>
+
+                <Box sx={{
+                    width: "44%",
+                    paddingLeft: "20%",
+                }}>
+                    <Box sx={{
+                        width: "100%"
+                    }}>
+                        <Typography
+                            variant='h4'
+                            sx={{
+                                color: "#042E76",
+                                fontWeight: 600
+                            }}
+                        >
+                            Job opportunities
+                        </Typography>
+
+                        <Box sx={{
+                            width: "90%",
+                            display: "flex",
+                            flexDirection: "column",
+                            fontWeight: 400
+                        }}>
+                            <Typography
+                                variant='div'
+                                sx={{
+                                    padding: "5% 0"
+                                }}
+                            >
+                                To check our latest job opportunities, click on “Search Now”  and  filter the results according to your job search criteria.
+                            </Typography>
+
+                            <Box sx={{
+                                display: "flex"
+                            }} >
+                                <Typography
+                                    variant='div'
+
+                                >
+                                    Search Now
+                                </Typography>
+                                <ArrowRightAltIcon
+                                    sx={{
+                                        marginLeft: "10px",
+                                        fontSize: "25px",
+                                        color: "#042E76"
+                                    }}
+                                />
+                            </Box>
+                        </Box>
+                    </Box>
+
+                    <Box sx={{
+                        width: "100%",
+                        marginTop: "40px"
+                    }}>
+                        <Typography
+                            variant='h4'
+                            sx={{
+                                color: "#042E76",
+                                fontWeight: 600
+                            }}
+                        >
+                            Register your CV
+                        </Typography>
+
+                        <Box sx={{
+                            width: "90%",
+                            display: "flex",
+                            flexDirection: "column",
+                            fontWeight: 400
+                        }}>
+                            <Typography
+                                variant='div'
+                                sx={{
+                                    padding: "5% 0"
+                                }}
+                            >
+                                To register for the first time, click on “Register” and follow the instructions.<br/>
+
+                                If registered already, insert your username and password and click on “Login”, to upload your updated CV or to modify your contact details.
+                            </Typography>
+
+                            <Box sx={{
+                                display: "flex"
+                            }} >
+                                <Typography
+                                    variant='div'
+
+                                >
+                                    To register your CV, please send an email to devito@agtinternational.it
+                                </Typography>
+                                <ArrowRightAltIcon
+                                    sx={{
+                                        margin: "10px 0 0 10px",
+                                        fontSize: "25px",
+                                        color: "#042E76"
+                                    }}
+                                />
+                            </Box>
+                        </Box>
+                    </Box>
+
+                </Box>
+            </Box>
+
         </div>
     )
 }
