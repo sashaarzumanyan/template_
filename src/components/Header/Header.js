@@ -19,6 +19,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTransform, motion } from 'framer-motion';
+import LanguagePopover from '../LangPopover';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -133,6 +134,7 @@ function DrawerAppBar(props) {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
+                    <LanguagePopover /> 
                 </Toolbar>
             </AppBar>
             <Box component="nav">

@@ -7,6 +7,7 @@ import Procurement from './Procurement/Procurement';
 import Projects from './Projects/Projects';
 import Technical_Page from './Technical Assistance/Technical_Page';
 import StoryPage from './SuccessfulStory.js/StoryPage'
+import News from './News/News';
 
 
 
@@ -21,6 +22,8 @@ const Main = () => {
           <Route path='projects' element={<Projects />} />
           <Route path='contacts' element={<Contact />} />
           <Route path='successful-stories' element={<StoryPage />} />
+          {/* <Route path='contact' element={<Contact />} /> */}
+          <Route path='news' element={<News />} />
         </Routes>
     </div>
   )

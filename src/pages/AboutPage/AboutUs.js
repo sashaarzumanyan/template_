@@ -13,6 +13,8 @@ const AboutUs = () => {
   const [users, setUsers] = useState()
   console.log(users);
 
+  const cardText = [t("Tender_participation"), t("vodka_Prodaction"), t("Cargo_transportation"), t("Our_aim")]
+
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
@@ -23,17 +25,16 @@ const AboutUs = () => {
     <>
       <div className=''>
         {articleInfo.map((item, index) => {
-          return <InfoArticle image={item.image} text={index === 0 ? t("About_us"): item.text} title={item.title} index={index} />
+          return <InfoArticle image={item.image} text={cardText[index]} title={item.title} index={index} />
         })}
       </div>
       <div>
         <Grid container spacing={2}>
           <Grid item xs={3}>
             <Paper className='sticky' sx={{ m: 2 }}>
-              <Typography align='center' variant='h5' sx={{ fontWeight: "600", pt: 3, color: '#042E76' }} >Organisation and staff</Typography>
+              <Typography align='center' variant='h5' sx={{ fontWeight: "600", pt: 3, color: '#042E76' }} >Our Team</Typography>
               <Typography sx={{ p: 3 }}>
-                <strong>AGT International</strong>’s staff and technicians are assisted by highly-qualified experts available on short-term consultancy agreements. For this reason, <strong>AGT International</strong>&nbsp;manages a HR database, containing <strong>over 5000 qualified CVs.</strong>
-                <strong>AGT International</strong>’s experts hold university degrees or higher education diplomas and are multilingual. They also have wide experience in project preparation and field work.
+                {t("Our_team")}
               </Typography>
             </Paper>
           </Grid>

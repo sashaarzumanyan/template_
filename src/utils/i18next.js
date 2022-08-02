@@ -4,21 +4,21 @@ import Backend from "i18next-xhr-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import translationEN from "../assets/locales/en/translation.json";
 // import translationAM from "../../public/assets/locales/am/translation.json";
-// import translationRU from "../../public/assets/locales/ru/translation.json";
+import translationRU from "../assets/locales/ru/translation.json";
 
-const fallbackLng = ["en"];
+const fallbackLng = ["ru"];
 const availableLanguages = ["en", "am", "ru"];
 
 const resources = {
   en: {
     translation: translationEN
   },
-//   am: {
-//     translation: translationAM
-//   },
-//   ru: {
-//     translation: translationRU
-//   }
+  //   am: {
+  //     translation: translationAM
+  //   },
+  ru: {
+    translation: translationRU
+  }
 };
 
 i18n
