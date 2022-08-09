@@ -10,41 +10,47 @@ export const projectCard = [
     title: "Agro-Industry, Marketing and Trade",
     dateInfo: "Cyprus | 2022 — 2024",
     text:  "CYPRUS – Capacity Development for Market Surveillance (EuropeAid/140609/DH/SER/CY)",
-    image: projectPhoto_1
+    image: projectPhoto_1,
+    category: "complated"
   },
 
   {
     title: "Procurement",
     dateInfo: "Ukraine | 2022 — On going",
     text:  "UKRAINE – Supply of First Aid Kits for EUAM Ukraine – EUAM-22-11",
-    image: projectPhoto_2
+    image: projectPhoto_2,
+    category: "vodka"
   },
 
   {
     title: "Procurement",
     dateInfo: "Angola | 2022 — On going",
     text:  "ANGOLA – Long Term Agreement UNOPS-LTA-2021-1003988 – Supply of Agricultural and Construction equipment worldwide",
-    image: projectPhoto_3
+    image: projectPhoto_3,
+    category: "complated"
   },
 
   {
     title: "Technical Assistance",
     dateInfo: "Zambia | 2022 — 2026",
     text:  "ZAMBIA – Aquaculture Project-Technical Assistance (ZAP-TA), Zambia – Ref.: INTPA/LUN/2021/EA-RE/0061",
-    image: projectPhoto_4
+    image: projectPhoto_4,
+    category: "current"
   },
 
   {
     title: "Machineries & Implements",
     dateInfo: "Egypt | 2021 — 2021",
     text:  "ICB No: 1/2019/ G107- Item No. 1- Supply of 20 Agriculture Tractors",
-    image: projectPhoto_5
+    image: projectPhoto_5,
+    category: "current"
   },
 
   {
     title: "Technical Assistance",
     dateInfo: "ACP Countries | 2021 — 2022",
     text:  "LATIN AMERICA and the CARIBBEAN “Lessons from the field: Strategies for effective implementation of Climate Focused",
-    image: projectPhoto_6
+    image: projectPhoto_6,
+    category: "vodka"
   },
 ]

@@ -74,8 +74,12 @@ function DrawerAppBar(props) {
     };
 
     const handleNavigate = (path) => {
-        debugger
-        navigate(path)
+        if(path === "home"){
+            navigate("/")
+        }else{
+            navigate(path)
+        }
+        
     }
 
     const drawer = (
@@ -87,7 +91,7 @@ function DrawerAppBar(props) {
             <List>
                 {navConf.map((item) => (
                     <ListItem key={item.path} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
+                        <ListItemButton onClick={() => handleNavigate()} sx={{ textAlign: 'center' }}>
                             <ListItemText primary={item.title}  />
                         </ListItemButton>
                     </ListItem>

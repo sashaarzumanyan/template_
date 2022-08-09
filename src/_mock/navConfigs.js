@@ -10,12 +10,6 @@ export const navConf = [
         isActive: false,
     },
     {
-        title: 'Technical Assistance',
-        path: 'technical-assistance',
-        isActive: false,
-
-    },
-    {
         title: 'Procurement',
         path: 'procurement',
         isActive: false,
@@ -28,16 +22,10 @@ export const navConf = [
 
     },
     {
-        title: 'Successful Stories',
-        path: 'successful-stories',
-        isActive: false,
-
-    },
-    {
         title: 'News',
         path: 'news',
         isActive: false,
-
+        
     },
     {
         title: 'Contacts',
@@ -45,4 +33,16 @@ export const navConf = [
         isActive: false,
 
     },
-]
+    // {
+        //     title: 'Technical Assistance',
+        //     path: 'technical-assistance',
+        //     isActive: false,
+        
+        // },
+        // {
+        //     title: 'Successful Stories',
+        //     path: 'successful-stories',
+        //     isActive: false,
+    
+        // },
+    ]
