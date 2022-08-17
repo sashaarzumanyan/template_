@@ -16,6 +16,12 @@ export const navConf = [
 
     },
     {
+        title: 'Industries',
+        path: 'industries',
+        isActive: false,
+
+    },
+    {
         title: 'Projects',
         path: 'projects',
         isActive: false,

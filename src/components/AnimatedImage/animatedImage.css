@@ -8,7 +8,7 @@
     position: absolute;
     height: 550px;
     right: 0;
-    /* width: 406px; */
+    width: 406px;
     /* width: 170px; */
     animation-name: second;
     animation-duration: 1s;
