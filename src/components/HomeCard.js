@@ -4,11 +4,20 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box, CardActionArea } from '@mui/material';
+import { setPageProps } from '../redux/actions/setPageInfo'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const HomeCard = ({ image, title }) => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const handleClick = () => {
+        dispatch(setPageProps({ pageTitle: title, image1: image, }))
+        navigate("/section")
+    }
     return (
         <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
-            <Card sx={{ width: {md: "100%" , xs: "700px"}  }}>
+            <Card sx={{ width: { md: "100%", xs: "700px" } }} onClick={handleClick}>
                 <CardActionArea sx={{}}>
                     <CardMedia
                         component="img"

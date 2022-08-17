@@ -1,8 +1,8 @@
 import { Card, CardMedia, Typography } from '@mui/material'
 import { motion } from "framer-motion"
-import { useDispatch } from 'react-redux'
-import { setPageProps } from '../redux/actions/setPageInfo'
 import React from 'react'
+import { setPageProps } from '../redux/actions/setPageInfo'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 const TechnicalCard = ({ title, img }) => {

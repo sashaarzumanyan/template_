@@ -5,9 +5,20 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
 import { motion } from "framer-motion"
+import { setPageProps } from '../redux/actions/setPageInfo'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 
 const ProjectCard = ({ newsCard = false, title, text, image, dateInfo, cardStyle }) => {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const handleClick = () => {
+        dispatch(setPageProps({ pageTitle: title, image1: image, paragraph: text }))
+        navigate("/section")
+    }
+
     return (
         <Box sx={{
             width: "400px",
@@ -18,13 +29,11 @@ const ProjectCard = ({ newsCard = false, title, text, image, dateInfo, cardStyle
             position: "relative",
             flexWrap: ""
         }}>
-            <Card sx={{
-                boxShadow: 0
-            }}>
+            <Card sx={{ boxShadow: 0 }} onClick={handleClick}>
                 <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}>
-                    {cardStyle === "list" ? null:
+                    {cardStyle === "list" ? null :
                         <CardMedia
                             component="img"
                             height="220"
@@ -33,7 +42,7 @@ const ProjectCard = ({ newsCard = false, title, text, image, dateInfo, cardStyle
                             sx={{
                                 width: "100%"
                             }}
-                        /> 
+                        />
                     }
                 </motion.div>
 

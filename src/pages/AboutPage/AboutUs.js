@@ -29,7 +29,7 @@ const AboutUs = () => {
         })}
       </div>
       <div>
-        <Grid container spacing={2}>
+        {/* <Grid container spacing={2}>
           <Grid item xs={3}>
             <Paper className='sticky' sx={{ m: 2 }}>
               <Typography align='center' variant='h5' sx={{ fontWeight: "600", pt: 3, color: '#042E76' }} >Our Team</Typography>
@@ -47,7 +47,7 @@ const AboutUs = () => {
               })}
             </Grid>
           </Grid>
-        </Grid>
+        </Grid> */}
       </div>
     </>
   )

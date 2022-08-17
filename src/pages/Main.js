@@ -15,7 +15,7 @@ import { useSelector } from 'react-redux';
 
 
 const Main = () => {
-  const {singlePageInfo: {image1, pageTitle, image2}} = useSelector(state => state)
+  const {singlePageInfo: {image1, pageTitle, image2, paragraph}} = useSelector(state => state)
   console.log(pageTitle, "hhh");
   return (
     <div>
@@ -28,7 +28,7 @@ const Main = () => {
           <Route path='contacts' element={<Contact />} />
           <Route path='successful-stories' element={<StoryPage />} />
           <Route path='industries' element={<Industries />} />
-          <Route path='section' element={<SinglePage pageTitle={pageTitle} image1={image1} image2={image2} />} />
+          <Route path='section' element={<SinglePage pageTitle={pageTitle} image1={image1} image2={image2} paragraph={paragraph} />} />
           <Route path='news' element={<News />} />
         </Routes>
     </div>
