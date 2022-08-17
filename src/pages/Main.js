@@ -12,6 +12,7 @@ import LoginForm from './LoginPage/LoginForm';
 import Industries from './Industries/Industries';
 import SinglePage from './SinglePage';
 import { useSelector } from 'react-redux';
+import Jobs from './Jobs/Jobs';
 
 
 
@@ -28,9 +29,10 @@ const Main = () => {
           <Route path='projects' element={<Projects />} />
           <Route path='contacts' element={<Contact />} />
           <Route path='successful-stories' element={<StoryPage />} />
-          <Route path='industries' element={<Industries />} />
+          <Route path='sevices' element={<Industries />} />
           <Route path='section' element={<SinglePage pageTitle={pageTitle} image1={image1} image2={image2} paragraph={paragraph} />} />
           <Route path='news' element={<News />} />
+          <Route path='jobs' element={<Jobs />} />
           <Route path="/login" element={<LoginForm />} />
         </Routes>
     </div>

@@ -28,12 +28,11 @@ const Home = () => {
 
     return (
         <div>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{height: "650px"}}>
                 <Grid item xs={12} md={3} lg={5} >
                     <Stack spacing={2} sx={{ ml: 4 }} >
                         <Typography variant='h2' sx={{ color: "#042E76" }}>RAF OJAKH</Typography>
                         <Typography variant="p" sx={{ pt: 4, pb: 4 }}>{t("About_us")}</Typography>
-                        <Typography variant='h5' sx={{ fontWeight: "600", color: "#042E76" }}>Industries</Typography>
                         {/* <Link component="a" to="#" variant='h4' sx={{ fontWeight: "600", color: "#042E76" }}>Job Opportunities</Link> */}
                     </Stack>
                 </Grid>

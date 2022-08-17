@@ -16,8 +16,8 @@ export const navConf = [
 
     },
     {
-        title: 'Industries',
-        path: 'industries',
+        title: 'Sevices',
+        path: 'sevices',
         isActive: false,
 
     },
@@ -31,7 +31,7 @@ export const navConf = [
         title: 'News',
         path: 'news',
         isActive: false,
-        
+
     },
     {
         title: 'Contacts',
@@ -39,16 +39,16 @@ export const navConf = [
         isActive: false,
 
     },
+    {
+        title: 'Jobs',
+        path: 'jobs',
+        isActive: false,
+
+    },
     // {
-        //     title: 'Technical Assistance',
-        //     path: 'technical-assistance',
-        //     isActive: false,
-        
-        // },
-        // {
-        //     title: 'Successful Stories',
-        //     path: 'successful-stories',
-        //     isActive: false,
-    
-        // },
-    ]
+    //     title: 'Successful Stories',
+    //     path: 'successful-stories',
+    //     isActive: false,
+
+    // },
+]
