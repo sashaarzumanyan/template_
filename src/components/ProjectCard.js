@@ -3,12 +3,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
 import { Box } from '@mui/system';
 import { motion } from "framer-motion"
 
 
-const ProjectCard = ({ newsCard = false, title, text, image, dateInfo }) => {
+const ProjectCard = ({ newsCard = false, title, text, image, dateInfo, cardStyle }) => {
     return (
         <Box sx={{
             width: "400px",
@@ -19,19 +18,23 @@ const ProjectCard = ({ newsCard = false, title, text, image, dateInfo }) => {
             position: "relative",
             flexWrap: ""
         }}>
-            <CardActionArea>
+            <Card sx={{
+                boxShadow: 0
+            }}>
                 <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}>
-                    <CardMedia
-                        component="img"
-                        height="220"
-                        image={image}
-                        alt={title}
-                        sx={{
-                            width: "100%"
-                        }}
-                    />
+                    {cardStyle === "list" ? null:
+                        <CardMedia
+                            component="img"
+                            height="220"
+                            image={image}
+                            alt={title}
+                            sx={{
+                                width: "100%"
+                            }}
+                        /> 
+                    }
                 </motion.div>
 
                 {!newsCard ? <Box sx={{
@@ -64,6 +67,7 @@ const ProjectCard = ({ newsCard = false, title, text, image, dateInfo }) => {
 
                         <Typography sx={{
                             fontSize: "14px",
+                            color: "#003DA5"
                         }}>
                             {dateInfo}
                         </Typography>
@@ -75,7 +79,7 @@ const ProjectCard = ({ newsCard = false, title, text, image, dateInfo }) => {
                         {text}
                     </Typography>
                 </CardContent>
-            </CardActionArea>
+            </Card>
         </Box>
     );
 }

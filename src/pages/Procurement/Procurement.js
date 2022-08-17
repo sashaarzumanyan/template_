@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
-import TechnicalCard from '../../components/technicalCard'
+import TechnicalCard from '../../components/TechnicalCard'
 import { procurement } from '../../_mock/procurement'
 
 const Procurement = () => {

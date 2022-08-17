@@ -1,17 +1,21 @@
-import React from 'react'
-import { Box, Grid, Link, Typography } from '@mui/material'
-import TechnicalImage from "../../assets/Technical image.jpg"
-import home2 from "../../assets/home2.jpg"
-import AnimatedImages from '../../components/AnimatedImage/AnimatedImages'
+import React, { useState } from 'react'
+import { Box, Chip, Grid, Link, Stack, Typography } from '@mui/material'
 import { projectCard } from "../../_mock/projectInfoCard"
 import ProjectCardI from "../../components/ProjectCard"
 
 const News = () => {
 
+    const[id, setId] = useState("grid")
+
+    const handleClick = (e) => {
+        setId(e)
+
+    };
+
     return (
         <Box>
             <Grid container >
-                <Grid xs={9} 
+                <Grid xs={9}
                     sx={{
                         padding: "5% 5% 10%"
                     }}
@@ -35,29 +39,24 @@ const News = () => {
 
             </Grid>
 
+            <Stack direction="row" spacing={1} sx={{margin: "0 0 20px 40px"}}>
+                <Chip label="Grid" variant={id==="grid"?"filled":"outlined"} onClick={()=>handleClick("grid")} sx={{width: "100px"}}/>
+                <Chip label="List" variant={id==="list"?"filled":"outlined"} onClick={()=>handleClick("list")} sx={{width: "100px"}}/>
+            </Stack>
+
             <Grid container spacing={6} sx={{
                 padding: "10px 30px"
             }}>
                 {projectCard.map(({ title, text, image, dateInfo }) => {
                     return (
                         <Grid item xs={12} sm={12} md={6} lg={4}  >
-                            <ProjectCardI newsCard={true} image={image} text={text} title={title} dateInfo={dateInfo} />
+                            <ProjectCardI cardStyle={id} newsCard={true} image={image} text={text} title={title} dateInfo={dateInfo} />
                         </Grid>
                     )
                 })}
             </Grid>
 
-            {/* <Grid container spacing={6} sx={{
-                padding: "10px 30px"
-            }}>
-                {projectCard.map(({ title, text, image, dateInfo }) => {
-                    return (
-                        <Grid item xs={12} sm={12} md={6} lg={4}  >
-                            <ProjectCardI image={image} text={text} title={title} dateInfo={dateInfo} />
-                        </Grid>
-                    )
-                })}
-            </Grid> */}
+           
         </Box>
     )
 }
