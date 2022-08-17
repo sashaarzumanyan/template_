@@ -8,6 +8,7 @@ import Projects from './Projects/Projects';
 import Technical_Page from './Technical Assistance/Technical_Page';
 import StoryPage from './SuccessfulStory.js/StoryPage'
 import News from './News/News';
+import LoginForm from './LoginPage/LoginForm';
 
 
 
@@ -24,6 +25,7 @@ const Main = () => {
           <Route path='successful-stories' element={<StoryPage />} />
           {/* <Route path='contact' element={<Contact />} /> */}
           <Route path='news' element={<News />} />
+          <Route path="/login" element={<LoginForm />} />
         </Routes>
     </div>
   )
