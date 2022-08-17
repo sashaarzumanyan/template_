@@ -9,10 +9,15 @@ import Technical_Page from './Technical Assistance/Technical_Page';
 import StoryPage from './SuccessfulStory.js/StoryPage'
 import News from './News/News';
 import LoginForm from './LoginPage/LoginForm';
+import Industries from './Industries/Industries';
+import SinglePage from './SinglePage';
+import { useSelector } from 'react-redux';
 
 
 
 const Main = () => {
+  const {singlePageInfo: {image1, pageTitle, image2}} = useSelector(state => state)
+  console.log(pageTitle, "hhh");
   return (
     <div>
         <Routes>
@@ -23,7 +28,8 @@ const Main = () => {
           <Route path='projects' element={<Projects />} />
           <Route path='contacts' element={<Contact />} />
           <Route path='successful-stories' element={<StoryPage />} />
-          {/* <Route path='contact' element={<Contact />} /> */}
+          <Route path='industries' element={<Industries />} />
+          <Route path='section' element={<SinglePage pageTitle={pageTitle} image1={image1} image2={image2} />} />
           <Route path='news' element={<News />} />
           <Route path="/login" element={<LoginForm />} />
         </Routes>

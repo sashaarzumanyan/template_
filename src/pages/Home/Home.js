@@ -34,13 +34,6 @@ const Home = () => {
                         <Typography variant='h2' sx={{ color: "#042E76" }}>RAF OJAKH</Typography>
                         <Typography variant="p" sx={{ pt: 4, pb: 4 }}>{t("About_us")}</Typography>
                         <Typography variant='h5' sx={{ fontWeight: "600", color: "#042E76" }}>Industries</Typography>
-                        <Box >
-                            <ul className='menu'>
-                                {ul_list.map((e, index) => {
-                                    return <li><a>{e}</a></li>
-                                })}
-                            </ul>
-                        </Box>
                         {/* <Link component="a" to="#" variant='h4' sx={{ fontWeight: "600", color: "#042E76" }}>Job Opportunities</Link> */}
                     </Stack>
                 </Grid>

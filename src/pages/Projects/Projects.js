@@ -11,10 +11,12 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import { useNavigate } from 'react-router-dom'
 
 const Projects = () => {
     const [value, setValue] = useState('all');
     console.log(value, "value======");
+    const navigate = useNavigate()
 
 
     const { t } = useTranslation()
@@ -36,6 +38,10 @@ const Projects = () => {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const handleNavigate = (title) => {
+        navigate('/section', {title})
+    }
 
     return (
         <Box>
@@ -86,7 +92,7 @@ const Projects = () => {
                 </Grid>
 
                 <Grid item xs={12} md={9} lg={7} sx={{ mt: { xs: 4 }, display: { xs: 'none', md: 'block' } }}>
-                    <AnimatedImages image1={home2} image2={TechnicalImage} />
+                    <AnimatedImages image1={home2} image2={TechnicalImage}  />
                 </Grid>
             </Grid>
 

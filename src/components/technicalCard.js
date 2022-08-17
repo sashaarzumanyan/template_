@@ -1,22 +1,24 @@
 import { Card, CardMedia, Typography } from '@mui/material'
 import { motion } from "framer-motion"
+import { useDispatch } from 'react-redux'
+import { setPageProps } from '../redux/actions/setPageInfo'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const TechnicalCard = ({ title, img }) => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const handleClick = () => {
+        dispatch(setPageProps({pageTitle: title, image1:img, image2: img }))
+        navigate("/section")
+    }
     return (
 
-        < Card
-            sx={{
-                position: "relative",
-            }}>
-
+        <Card sx={{ position: "relative", }} onClick={handleClick}>
             <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}>
-                <CardMedia sx={{
-                    width: "100%"
-
-                }}
+                <CardMedia sx={{ width: "100%", height: "400px" }}
                     component="img"
                     alt="green iguana"
                     image={img}

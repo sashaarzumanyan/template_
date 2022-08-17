@@ -6,7 +6,7 @@ import translationEN from "../assets/locales/en/translation.json";
 // import translationAM from "../../public/assets/locales/am/translation.json";
 import translationRU from "../assets/locales/ru/translation.json";
 
-const fallbackLng = ["ru"];
+const fallbackLng = ["en"];
 const availableLanguages = ["en", "am", "ru"];
 
 const resources = {
