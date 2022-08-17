@@ -129,7 +129,7 @@ function DrawerAppBar(props) {
                             </Button>
                         ))}
                     </Box>
-                    <Search>
+                    {/* <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
                         </SearchIconWrapper>
@@ -137,7 +137,7 @@ function DrawerAppBar(props) {
                             placeholder="Search…"
                             inputProps={{ 'aria-label': 'search' }}
                         />
-                    </Search>
+                    </Search> */}
                     <LanguagePopover /> 
                 </Toolbar>
             </AppBar>
