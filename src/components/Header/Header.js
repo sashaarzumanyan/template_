@@ -20,49 +20,51 @@ import InputBase from '@mui/material/InputBase';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTransform, motion } from 'framer-motion';
 import LanguagePopover from '../LangPopover';
+import Logo from '../../assets/raf_logo_small.png';
+import { click } from '@testing-library/user-event/dist/click';
+import MegaMenu from '../MegaMenu/MegaMenu';
 
+// const Search = styled('div')(({ theme }) => ({
+//     position: 'relative',
+//     borderRadius: theme.shape.borderRadius,
+//     backgroundColor: alpha(theme.palette.common.white, 0.15),
+//     '&:hover': {
+//         backgroundColor: alpha(theme.palette.common.white, 0.25),
+//     },
+//     marginLeft: 0,
+//     width: '100%',
+//     [theme.breakpoints.up('sm')]: {
+//         marginLeft: theme.spacing(1),
+//         width: 'auto',
+//     },
+// }));
 
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(1),
-        width: 'auto',
-    },
-}));
+// const SearchIconWrapper = styled('div')(({ theme }) => ({
+//     padding: theme.spacing(0, 2),
+//     height: '100%',
+//     position: 'absolute',
+//     pointerEvents: 'none',
+//     display: 'flex',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+// }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-        padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: '12ch',
-            '&:focus': {
-                width: '20ch',
-            },
-        },
-    },
-}));
+// const StyledInputBase = styled(InputBase)(({ theme }) => ({
+//     color: 'inherit',
+//     '& .MuiInputBase-input': {
+//         padding: theme.spacing(1, 1, 1, 0),
+//         // vertical padding + font size from searchIcon
+//         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+//         transition: theme.transitions.create('width'),
+//         width: '100%',
+//         [theme.breakpoints.up('sm')]: {
+//             width: '12ch',
+//             '&:focus': {
+//                 width: '20ch',
+//             },
+//         },
+//     },
+// }));
 
 function DrawerAppBar(props) {
     const { window, scrollY, offsetY } = props;
@@ -73,26 +75,26 @@ function DrawerAppBar(props) {
         setMobileOpen(!mobileOpen);
     };
 
-    const handleNavigate = (path) => {
-        if(path === "home"){
+    const handleNavigate = (path, e) => {
+        console.log(e);
+        if (path === "home") {
             navigate("/")
-        }else{
+        } else {
             navigate(path)
         }
-        
     }
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                LOGO
+                <img alt='logo' className='logoSvg' src={Logo} width={'30%'} />
             </Typography>
             <Divider />
             <List>
                 {navConf.map((item) => (
                     <ListItem key={item.path} disablePadding>
                         <ListItemButton onClick={() => handleNavigate(item.path)} sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item.title}  />
+                            <ListItemText primary={item.title} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -102,9 +104,34 @@ function DrawerAppBar(props) {
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
+    //...........popover funtions............
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handlePopoverOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handlePopoverClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
+
+
+
+    const servicesProps = {
+        // "aria-owns": open ? 'mouse-over-popover' : undefined,
+        "aria-haspopup": true,
+        onMouseEnter:  handlePopoverOpen ,
+        // onMouseLeave:  handlePopoverClose 
+    }
+
+
+
     return (
-        <Box className='header'  sx={{ display: 'flex' }}>
-            <AppBar sx={{ backgroundColor: "white", color: "inherit"}} >
+        <Box className='header' sx={{ display: 'flex' }}>
+            <AppBar sx={{ backgroundColor: "white", color: "inherit", padding: '0 4%' }} >
                 <Toolbar >
                     <IconButton
                         color="inherit"
@@ -118,16 +145,25 @@ function DrawerAppBar(props) {
                     <Typography
                         variant="h6"
                         component="div"
+                        width='5%'
                         sx={{ flexGrow: 1, display: { xs: 'none', lg: 'block' } }}
                     >
-                        LOGO
+                        <img alt='logo' className='logoSvg' src={Logo} width={'90px'} onClick={() => {
+                            handleNavigate('home');
+                        }} />
                     </Typography>
-                    <Box sx={{ display: { xs: 'none', lg: 'block' } }}>
+                    <Box sx={{ paddingRight: '3%', display: { xs: 'none', lg: 'block' } }}>
                         {navConf.map((item) => (
-                            <Button onClick={()=> handleNavigate(item.path)} key={item.path} sx={{ color: 'inherit' }}>
+                            <Button
+                                {...servicesProps}
+                                aria-owns={open && item.path === "services" ? 'mouse-over-popover' : undefined}
+                                onClick={(e) => handleNavigate(item.path, e)} key={item.path} sx={{ fontSize: '16px', color: 'inherit' }}
+                            >
                                 {item.title}
                             </Button>
+
                         ))}
+                        <MegaMenu handlePopoverClose={handlePopoverClose} anchorEl={anchorEl} open={open}/>
                     </Box>
                     {/* <Search>
                         <SearchIconWrapper>
@@ -138,7 +174,7 @@ function DrawerAppBar(props) {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search> */}
-                    <LanguagePopover /> 
+                    <LanguagePopover />
                 </Toolbar>
             </AppBar>
             <Box component="nav">
@@ -168,11 +204,9 @@ function DrawerAppBar(props) {
 
 export default DrawerAppBar;
 
-
-
 /* import React, { useState } from 'react'
 import { navConf } from '../../_mock/navConfigs'
-import Logo from '../../assets/logo.svg'
+
 import SearchPanel from './SearchPanel'
 
 const Header = () => {

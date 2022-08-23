@@ -5,10 +5,10 @@
 }
 
 .img1 {
-    position: absolute;
-    height: 550px;
+    position: relative;
+    height: 50vh;
     right: 0;
-    width: 406px;
+    width: 70%;
     /* width: 170px; */
     animation-name: second;
     animation-duration: 1s;
@@ -21,19 +21,19 @@
 
 .img2 {
     position: absolute;
-    right: 300px;
+    right: 5%;
     top: 30px;
-    height: 520px;
-    width: 406px;
+    height: 50vh;
+    width: 70%;
 }
 
 .blueDiv {
     position: absolute;
-    width: 100px;
-    height: 200px;
+    width: 20%;
+    height: 15.5vh;
     background-color: blue;
     z-index: 20;
-    right: 200px;
+    right: 5%;
     top: 350px;
 }
 /* 

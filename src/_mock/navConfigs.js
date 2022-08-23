@@ -16,8 +16,8 @@ export const navConf = [
 
     },
     {
-        title: 'Sevices',
-        path: 'sevices',
+        title: 'Services',
+        path: 'services',
         isActive: false,
 
     },
@@ -40,8 +40,8 @@ export const navConf = [
 
     },
     {
-        title: 'Jobs',
-        path: 'jobs',
+        title: 'Careers',
+        path: 'careers',
         isActive: false,
 
     },

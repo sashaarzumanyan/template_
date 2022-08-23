@@ -8,12 +8,12 @@ import { setPageProps } from '../redux/actions/setPageInfo'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-const HomeCard = ({ image, title }) => {
+const HomeCard = ({ image, title, resource }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleClick = () => {
-        dispatch(setPageProps({ pageTitle: title, image1: image, }))
-        navigate("/section")
+        dispatch(setPageProps({ pageTitle: title, image1: image, resource }))
+        navigate(`/${resource}`)
     }
     return (
         <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>

@@ -2,7 +2,9 @@ const initialState = {
     pageTitle:null,
     paragraph:null,
     image1:null,
-    image2:null
+    image2:null,
+    section: null,
+    resource: null
 }
 
 export const singlePageInfo = (state = initialState, action) => {

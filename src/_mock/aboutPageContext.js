@@ -1,7 +1,6 @@
 import { Typography } from "@mui/material";
 import Picture1 from '../assets/picture1.jpg'
 import Picture2 from '../assets/picture2.jpg'
-import Picture3 from '../assets/picture3.jpg'
 
 
 
@@ -29,14 +28,14 @@ export const articleInfo = [
         </Typography>,
         image: Picture2
     },
-    {
-        title: "Strategic Partners",
-        text: <Typography>
-            <strong>AGT International</strong> operates worldwide and, throughout its 50 years of activity, it has gained experience in more than 80 countries.
-            Main clients include national public administrations <strong><em>(i.e. Ministry of Agriculture, Ministry of the Environment, regional and local public agencies,etc )</em> </strong>as well as international institutions <strong><em>(i.e. European Commission, World Bank, Asian Development Bank, African Development Bank, United Nations, etc.)</em></strong> and the private sector.
-            </Typography>,
-        image: Picture1
-    },
+    // {
+    //     title: "Strategic Partners",
+    //     text: <Typography>
+    //         <strong>AGT International</strong> operates worldwide and, throughout its 50 years of activity, it has gained experience in more than 80 countries.
+    //         Main clients include national public administrations <strong><em>(i.e. Ministry of Agriculture, Ministry of the Environment, regional and local public agencies,etc )</em> </strong>as well as international institutions <strong><em>(i.e. European Commission, World Bank, Asian Development Bank, African Development Bank, United Nations, etc.)</em></strong> and the private sector.
+    //         </Typography>,
+    //     image: Picture1
+    // },
     // {
     //     title: "Our Aim",
     //     text: <Typography>

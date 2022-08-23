@@ -5,7 +5,6 @@ import "./animatedImage.css"
 const AnimatedImages = ({ image1, image2 }) => {
 
   return (
-    <div style={{ width: "100%" }} >
       <div className='firstImg'>
         <motion.img
           initial={{ opacity: 0, scale: 0.5 }}
@@ -23,14 +22,13 @@ const AnimatedImages = ({ image1, image2 }) => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         />
-        <motion.div
+        <motion.img
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className='blueDiv'
-        ></motion.div>
+        />
       </div>
-    </div>
   )
 }
 

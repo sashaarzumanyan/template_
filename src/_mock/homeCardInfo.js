@@ -3,12 +3,14 @@ import teaPlanter from '../assets/teaPlanter.jpg';
 
 export const homeCardInfo = [
     {
+        resource: 'services',
         image: test,
-        title: "Explore Our Procurement Activities"
+        title: "Explore Our Industries"
     },
     {
+        resource: 'projects',
         image: teaPlanter,
-        title: "Explore Our Technical Assistance Activities"
+        title: "Explore Our Projects"
     }
 ]
 

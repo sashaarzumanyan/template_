@@ -1,9 +1,9 @@
 import React from 'react'
-import logo from './images/logo.svg'
+// import logo from './images/logo.svg'
 import { FaLinkedinIn } from 'react-icons/fa';
 import { SiYoutube } from 'react-icons/si';
 import { navConf } from '../../_mock/navConfigs';
-
+import logo from '../../assets/raf_logo_small.png';
 
 import './footer.css'
 
@@ -13,13 +13,12 @@ const Footer = () => {
     //     "News", "Contacts"]
     // menun coment em arel nav configsi ov em map fracel
 
-
     return (
         <div className='allFooter'>
 
             <div className='footerLogo'>
                 <div className='footerLogo_logo'>
-                    <img src={logo} alt="logo" />
+                    <img src={logo} alt="logo" width={'40%'} />
                 </div>
 
                 <div className='footerLogo_container'>
@@ -27,8 +26,6 @@ const Footer = () => {
                         <FaLinkedinIn />
                         <a target={"blank"} href="#"></a>
                     </button>
-                    <button className='look_profile'>Отслеживать</button>
-                    <div>1111</div>
                 </div>
 
                 <div className='subscribe_youtube'>
@@ -37,7 +34,6 @@ const Footer = () => {
                         <div>YouTube</div>
                         <a href="https://www.youtube.com/"></a>
                     </button>
-                    <div>4</div>
                 </div>
             </div>
 
@@ -78,13 +74,6 @@ const Footer = () => {
                     <div className='job'>
                         <h4>Job Opportunity</h4>
                         <a href='#'>Careers</a>
-                        <a href='#'>Register your cv</a>
-                    </div>
-
-                    <div className='legal'>
-                        <h4>Legal</h4>
-                        <a href=''>Documents</a>
-                        <a href=''>Credits</a>
                     </div>
                 </div>
 

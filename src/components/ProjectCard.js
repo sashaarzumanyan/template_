@@ -10,13 +10,13 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 
-const ProjectCard = ({ newsCard = false, title, text, image, dateInfo, cardStyle }) => {
+const ProjectCard = ({ newsCard = false, title, text, image, dateInfo, cardStyle, resource }) => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleClick = () => {
-        dispatch(setPageProps({ pageTitle: title, image1: image, paragraph: text }))
-        navigate("/section")
+        dispatch(setPageProps({ resource, image1: image, image2: image }))
+        navigate("/details")
     }
 
     return (

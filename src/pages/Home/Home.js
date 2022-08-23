@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, CardMedia, Grid, Stack, Typography } from '@mui/material';
+import { Box, CardMedia, Grid, Stack, Typography, Grow } from '@mui/material';
 import { Link } from 'react-router-dom';
 import AnimatedImages from '../../components/AnimatedImage/AnimatedImages';
 import home1 from "../../assets/home1.jpg";
@@ -27,32 +27,34 @@ const Home = () => {
     const team_specific = t("team_specific", { returnObjects: true });
 
     return (
-        <div>
+        <Grid item xs={12} md={5} lg={4} 
+                   sx={{ padding: "4% 3% 10%" }}
+                >
             <Grid container spacing={2} sx={{height: "650px"}}>
-                <Grid item xs={12} md={3} lg={5} >
+                <Grid item xs={12} md={6} lg={5} >
                     <Stack spacing={2} sx={{ ml: 4 }} >
-                        <Typography variant='h2' sx={{ color: "#042E76" }}>RAF OJAKH</Typography>
-                        <Typography variant="p" sx={{ pt: 4, pb: 4 }}>{t("About_us")}</Typography>
+                    <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...( { timeout: 1500 })}><Typography variant='h2' sx={{ color: "#042E76" }}>RAF OJAKH</Typography></Grow>
+                    <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...( { timeout: 1500 })}><Typography variant="p" sx={{ pt: 4, pb: 4 }}>{t("About_us")}</Typography></Grow>
                         {/* <Link component="a" to="#" variant='h4' sx={{ fontWeight: "600", color: "#042E76" }}>Job Opportunities</Link> */}
                     </Stack>
                 </Grid>
-                <Grid item xs={12} md={9} lg={7} sx={{ mt: { xs: 4 }, display: { xs: 'none', md: 'block' } }}>
-                    <AnimatedImages image1={home1} image2={home2} />
+                <Grid item xs={12} md={6} lg={7} sx={{ mt: { xs: 4 }, display: { xs: 'none', md: 'block' } }}>
+                    <div style={{ paddingLeft: '15%', width: '80%', position: 'relative', display: 'block'}}><AnimatedImages image1={home1} image2={home2} /></div>
                 </Grid>
             </Grid>
             <div className='cardDiv'>
-                <Grid container spacing={2} sx={{}}>
-                    {homeCardInfo.map(({ title, image }) => {
+            <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...( { timeout: 1500 })}><Grid container spacing={2} sx={{ backgroundColor: '#f0f8ff'}}>
+                    {homeCardInfo.map(({ title, image, resource }) => {
                         return (
                             <Grid item sm={12} md={6} sx={{ display: "flex", justifyContent: "center", mb: 6 }}>
-                                <HomeCard title={title} image={image} />
+                                <HomeCard title={title} image={image} resource={resource} />
                             </Grid>
                         )
                     })}
-                </Grid>
+                </Grid></Grow>
             </div>
 
-            <Box
+            <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...( { timeout: 1500 })}><Box
                 sx={{
                     width: "90%",
                     padding: "5%",
@@ -66,7 +68,7 @@ const Home = () => {
                     <CardMedia component="img" height="220" image={homeImg} alt="img" sx={{ width: "100%", height: "100%" }} />
                     <Box
                         sx={{
-                            backgroundColor: "#f8f7f7",
+                            backgroundColor: "#f0f8ff",
                             width: "20%",
                             height: "60vh",
                             zIndex: 3,
@@ -79,7 +81,7 @@ const Home = () => {
                 <Box sx={{ width: { sm: "90%", md: "44%" }, paddingLeft: { sm: 0, md: "20%" } }}>
                     <Box sx={{ width: "100%" }}>
                         <Typography variant='h4' sx={{ color: "#042E76", fontWeight: 600 }}>
-                            Out Team
+                            Our Team
                         </Typography>
 
                         <Box
@@ -108,7 +110,7 @@ const Home = () => {
                         </Box>
                     </Box>
                 </Box>
-            </Box>
+            </Box></Grow>
             {/* 
                     <Box sx={{ width: "100%", marginTop: "40px" }}>
                         <Typography variant='h4' sx={{ color: "#042E76", fontWeight: 600 }}>
@@ -134,7 +136,7 @@ const Home = () => {
                     </Box> */}
 
 
-            <Box >
+<Grow in={true} style={{ transformOrigin: '0 0 0' }} {...( { timeout: 1500 })}><Box sx={{ backgroundColor: '#f0f8ff' }}>
                 <h3 style={{ color: "#042E76", textAlign: "center" }}>Certifications - We are part of</h3>
                 <Box sx={{ display: "flex", justifyContent: "space-around", alignItems: "center", flexWrap: "wrap" }}>
                     {imagesArray.map((img, index) => {
@@ -150,9 +152,9 @@ const Home = () => {
                         )
                     })}
                 </Box>
-            </Box>
+            </Box></Grow>
 
-        </div>
+        </Grid>
     )
 }
 

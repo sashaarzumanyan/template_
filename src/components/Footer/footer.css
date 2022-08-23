@@ -3,6 +3,7 @@
     text-decoration: none;
 }
 .allFooter {
+    /* position: relative; */
     width: 100%;
     padding: 20vh 0;
     background-color: #f8f7f7;

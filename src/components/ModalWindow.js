@@ -27,8 +27,8 @@ export default function BasicModal({ open, handleClose }) {
                 aria-describedby="modal-modal-description"
             >
                 <>
-                    <Stack sx={style} spacing={2}>
-                        <Typography textAlign='center' >Fill the fields</Typography>
+                    <Stack style={{ height: "350px" }}sx={style} spacing={2}>
+                        <Typography textAlign='center' >Apply </Typography>
                         <TextField id="outlined-basic" label="Full Name" variant="outlined" />
                         <TextField id="outlined-basic" label="Email" variant="outlined" />
                         <TextField id="outlined-basic" label="Phone" variant="outlined" />
