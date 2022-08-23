@@ -26,9 +26,7 @@ const MegaMenu = ({handlePopoverOpen, handlePopoverClose, anchorEl, open }) => {
                 onMouseLeave={handlePopoverClose}
                 // disableRestoreFocus
                 // disableAutoFocus={true}
-                // disableEnforceFocus={true}
-
-                
+                // disableEnforceFocus={true}                
             >
                 <Typography onClick={(event)=>console.log(event)} sx={{ p: 1 }}>I use Popover.</Typography>
             </Popover>
