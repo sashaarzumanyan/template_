@@ -163,7 +163,7 @@ function DrawerAppBar(props) {
                             </Button>
 
                         ))}
-                        <MegaMenu handlePopoverClose={handlePopoverClose} anchorEl={anchorEl} open={open}/>
+                        {/* <MegaMenu handlePopoverClose={handlePopoverClose} anchorEl={anchorEl} open={open}/> */}
                     </Box>
                     {/* <Search>
                         <SearchIconWrapper>
