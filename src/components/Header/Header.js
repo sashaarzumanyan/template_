@@ -1,6 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -15,10 +13,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { navConf } from '../../_mock/navConfigs'
 import Button from '@mui/material/Button';
-import SearchIcon from '@mui/icons-material/Search';
-import InputBase from '@mui/material/InputBase';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useTransform, motion } from 'framer-motion';
 import LanguagePopover from '../LangPopover';
 import Logo from '../../assets/raf_logo_small.png';
 import { click } from '@testing-library/user-event/dist/click';
@@ -26,47 +21,6 @@ import MegaMenu from '../MegaMenu/MegaMenu';
 import {procurement} from '../../_mock/procurement'
 import { useTranslation } from 'react-i18next';
 
-// const Search = styled('div')(({ theme }) => ({
-//     position: 'relative',
-//     borderRadius: theme.shape.borderRadius,
-//     backgroundColor: alpha(theme.palette.common.white, 0.15),
-//     '&:hover': {
-//         backgroundColor: alpha(theme.palette.common.white, 0.25),
-//     },
-//     marginLeft: 0,
-//     width: '100%',
-//     [theme.breakpoints.up('sm')]: {
-//         marginLeft: theme.spacing(1),
-//         width: 'auto',
-//     },
-// }));
-
-// const SearchIconWrapper = styled('div')(({ theme }) => ({
-//     padding: theme.spacing(0, 2),
-//     height: '100%',
-//     position: 'absolute',
-//     pointerEvents: 'none',
-//     display: 'flex',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-// }));
-
-// const StyledInputBase = styled(InputBase)(({ theme }) => ({
-//     color: 'inherit',
-//     '& .MuiInputBase-input': {
-//         padding: theme.spacing(1, 1, 1, 0),
-//         // vertical padding + font size from searchIcon
-//         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-//         transition: theme.transitions.create('width'),
-//         width: '100%',
-//         [theme.breakpoints.up('sm')]: {
-//             width: '12ch',
-//             '&:focus': {
-//                 width: '20ch',
-//             },
-//         },
-//     },
-// }));
 
 function DrawerAppBar(props) {
     const { window, scrollY, offsetY } = props;
@@ -117,8 +71,7 @@ function DrawerAppBar(props) {
 
     const popoverEnter = ({ currentTarget }) => {
         setOpenedPopover(true);
-        
-        console.log("qqqqqqqqqqqq", currentTarget.document);
+        setLabel(currentTarget.attributes.label.nodeValue)        
     };
 
     const popoverLeave = ({ currentTarget }) => {
@@ -135,7 +88,6 @@ function DrawerAppBar(props) {
         onMouseLeave: popoverLeave,
         label: path,
     })
-
 
 
     return (
@@ -167,24 +119,14 @@ function DrawerAppBar(props) {
                                 <Button
                                     {...servicesProps(item.path)}
                                     // aria-owns={open && item.path === "services" ? 'mouse-over-popover' : undefined}
-                                    onClick={(e) => handleNavigate(item.path, e)} key={item.path} sx={{ fontSize: '16px', color: 'inherit' }}
+                                    onClick={(e) => handleNavigate(item.path, e)} key={item.path} sx={{padding: "35px 10px", fontSize: '16px', color: 'inherit' }}
                                 >
                                     {item.title}
                                 </Button>
                             </>
                         ))}
-                        {/* <MegaMenu content={item.path === "services"? ul_list : procurement } popoverLeave={popoverLeave} popoverEnter={popoverEnter} popoverAnchor={popoverAnchor} openedPopover={openedPopover} /> */}
                     </Box>
-                    <MegaMenu popoverLeave={popoverLeave} popoverEnter={popoverEnter} popoverAnchor={popoverAnchor} openedPopover={openedPopover} />
-                    {/* <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </Search> */}
+                    <MegaMenu content={label === "services"? ul_list : label === "procurement" ?procurement : null } popoverLeave={popoverLeave} popoverEnter={popoverEnter} popoverAnchor={popoverAnchor} openedPopover={openedPopover} />
                     <LanguagePopover />
                 </Toolbar>
             </AppBar>
@@ -215,45 +157,3 @@ function DrawerAppBar(props) {
 
 export default DrawerAppBar;
 
-/* import React, { useState } from 'react'
-import { navConf } from '../../_mock/navConfigs'
-
-import SearchPanel from './SearchPanel'
-
-const Header = () => {
-    const [open, setOpen] = useState(false)
-    const { pathname } = window.location
-
-    return (
-        <div className='headerMain'>
-            <span className='logo'>
-                <img alt='logo' className='logoSvg' src={Logo} />
-            </span>
-            <div className='headerManuDiv'>
-                <ul className='manu-ul'>
-                    {navConf.map((item, index) => {
-                        // debugger
-                        return (
-                            <li className='li' key={index} >
-                                <a style={{ color: `/${item.path}` === pathname ? "#003DA5" : "black" }} href={item.path}>{item.title}</a>
-                            </li>
-                        )
-                    })}
-                </ul>
-            </div>
-            <div>
-                {
-                    open ? <SearchPanel onClose={setOpen} open={open} /> :
-                        <button
-                            className='searchBtn'
-                            onClick={() => setOpen(!open)}
-                        >
-                            <p>Search</p>
-                        </button>
-                }
-            </div>
-        </div >
-    )
-}
-
-export default Header */
