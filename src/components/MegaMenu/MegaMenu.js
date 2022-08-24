@@ -1,37 +1,57 @@
-import * as React from 'react';
-import Popover from '@mui/material/Popover';
-import Typography from '@mui/material/Typography';
+import { Popover } from "@mui/material";
+import { makeStyles } from '@mui/styles';
+import React, { useState, useRef } from "react";
 
-const MegaMenu = ({handlePopoverOpen, handlePopoverClose, anchorEl, open }) => {
 
-    return (
-        <div>
+const useStyles = makeStyles(theme => ({
+  popover: {
+    pointerEvents: "none"
+  },
+  popoverContent: {
+    pointerEvents: "auto",
+    width: "100%"
+  },
+}));
 
-            <Popover
-                id="mouse-over-popover"
-                sx={{
-                    pointerEvents: 'none',
-                }}
-                open={open}
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left',
-                }}
-                transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'left',
-                }}
-                onClose={handlePopoverClose}
-                onMouseLeave={handlePopoverClose}
-                // disableRestoreFocus
-                // disableAutoFocus={true}
-                // disableEnforceFocus={true}                
-            >
-                <Typography onClick={(event)=>console.log(event)} sx={{ p: 1 }}>I use Popover.</Typography>
-            </Popover>
-        </div>
-    );
-}
+const MegaMenu = ({popoverLeave, popoverEnter, popoverAnchor, openedPopover}) => {
+  
+  const classes = useStyles();
 
-export default MegaMenu
+  return (
+    <div>
+      {/* <span
+        ref={popoverAnchor}
+        aria-owns="mouse-over-popover"
+        aria-haspopup="true"
+        onMouseEnter={popoverEnter}
+        onMouseLeave={popoverLeave}
+      >
+        Hover this el !
+      </span> */}
+      <Popover
+        id="mouse-over-popover"
+        className={classes.popover}
+        classes={{
+          paper: classes.popoverContent
+        }}
+        sx={{width: "100%"}}
+        open={openedPopover}
+        anchorReference="anchorPosition"
+        anchorPosition={{top:200, left: 0}}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right"
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left"
+        }}
+        PaperProps={{ onMouseEnter: popoverEnter, onMouseLeave: popoverLeave }}
+      >
+        <div style={{width: "100%" , height: "200px", }}>My popover content...</div>
+      </Popover>
+    </div>
+  );
+};
+
+export default MegaMenu;

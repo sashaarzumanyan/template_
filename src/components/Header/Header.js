@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useRef, useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
@@ -68,8 +68,11 @@ import MegaMenu from '../MegaMenu/MegaMenu';
 
 function DrawerAppBar(props) {
     const { window, scrollY, offsetY } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
-    const navigate = useNavigate()
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const navigate = useNavigate();
+    const popoverAnchor = useRef(null);
+    const [openedPopover, setOpenedPopover] = useState(false);
+
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -106,25 +109,22 @@ function DrawerAppBar(props) {
 
     //...........popover funtions............
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
-
-    const handlePopoverOpen = (event) => {
-        setAnchorEl(event.currentTarget);
+    const popoverEnter = ({ currentTarget }) => {
+        setOpenedPopover(true);
     };
 
-    const handlePopoverClose = () => {
-        setAnchorEl(null);
+    const popoverLeave = ({ currentTarget }) => {
+        setOpenedPopover(false);
     };
-
-    const open = Boolean(anchorEl);
 
 
 
     const servicesProps = {
-        // "aria-owns": open ? 'mouse-over-popover' : undefined,
-        "aria-haspopup": true,
-        onMouseEnter:  handlePopoverOpen ,
-        // onMouseLeave:  handlePopoverClose 
+        ref: popoverAnchor,
+        "aria-owns": "mouse-over-popover",
+        "aria-haspopup": "true",
+        onMouseEnter: popoverEnter,
+        onMouseLeave: popoverLeave
     }
 
 
@@ -156,14 +156,14 @@ function DrawerAppBar(props) {
                         {navConf.map((item) => (
                             <Button
                                 {...servicesProps}
-                                aria-owns={open && item.path === "services" ? 'mouse-over-popover' : undefined}
+                                // aria-owns={open && item.path === "services" ? 'mouse-over-popover' : undefined}
                                 onClick={(e) => handleNavigate(item.path, e)} key={item.path} sx={{ fontSize: '16px', color: 'inherit' }}
                             >
                                 {item.title}
                             </Button>
 
                         ))}
-                        {/* <MegaMenu handlePopoverClose={handlePopoverClose} anchorEl={anchorEl} open={open}/> */}
+                        <MegaMenu popoverLeave={popoverLeave} popoverEnter={popoverEnter} popoverAnchor={popoverAnchor} openedPopover={openedPopover}/>
                     </Box>
                     {/* <Search>
                         <SearchIconWrapper>
