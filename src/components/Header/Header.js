@@ -23,6 +23,8 @@ import LanguagePopover from '../LangPopover';
 import Logo from '../../assets/raf_logo_small.png';
 import { click } from '@testing-library/user-event/dist/click';
 import MegaMenu from '../MegaMenu/MegaMenu';
+import {procurement} from '../../_mock/procurement'
+import { useTranslation } from 'react-i18next';
 
 // const Search = styled('div')(({ theme }) => ({
 //     position: 'relative',
@@ -72,6 +74,10 @@ function DrawerAppBar(props) {
     const navigate = useNavigate();
     const popoverAnchor = useRef(null);
     const [openedPopover, setOpenedPopover] = useState(false);
+    const { t } = useTranslation();
+    const [label, setLabel] = useState(null)
+
+    const ul_list = t("Industries", { returnObjects: true });
 
 
     const handleDrawerToggle = () => {
@@ -111,6 +117,8 @@ function DrawerAppBar(props) {
 
     const popoverEnter = ({ currentTarget }) => {
         setOpenedPopover(true);
+        
+        console.log("qqqqqqqqqqqq", currentTarget.document);
     };
 
     const popoverLeave = ({ currentTarget }) => {
@@ -119,20 +127,21 @@ function DrawerAppBar(props) {
 
 
 
-    const servicesProps = {
+    const servicesProps = (path) => ({
         ref: popoverAnchor,
         "aria-owns": "mouse-over-popover",
-        "aria-haspopup": "true",
-        onMouseEnter: popoverEnter,
-        onMouseLeave: popoverLeave
-    }
+        "aria-haspopup": true,
+        onMouseEnter: path === "services" || "procurement" ? popoverEnter : null,
+        onMouseLeave: popoverLeave,
+        label: path,
+    })
 
 
 
     return (
         <Box className='header' sx={{ display: 'flex' }}>
             <AppBar sx={{ backgroundColor: "white", color: "inherit", padding: '0 4%' }} >
-                <Toolbar >
+                <Toolbar  >
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -154,17 +163,19 @@ function DrawerAppBar(props) {
                     </Typography>
                     <Box sx={{ paddingRight: '3%', display: { xs: 'none', lg: 'block' } }}>
                         {navConf.map((item) => (
-                            <Button
-                                {...servicesProps}
-                                // aria-owns={open && item.path === "services" ? 'mouse-over-popover' : undefined}
-                                onClick={(e) => handleNavigate(item.path, e)} key={item.path} sx={{ fontSize: '16px', color: 'inherit' }}
-                            >
-                                {item.title}
-                            </Button>
-
+                            <>
+                                <Button
+                                    {...servicesProps(item.path)}
+                                    // aria-owns={open && item.path === "services" ? 'mouse-over-popover' : undefined}
+                                    onClick={(e) => handleNavigate(item.path, e)} key={item.path} sx={{ fontSize: '16px', color: 'inherit' }}
+                                >
+                                    {item.title}
+                                </Button>
+                            </>
                         ))}
-                        <MegaMenu popoverLeave={popoverLeave} popoverEnter={popoverEnter} popoverAnchor={popoverAnchor} openedPopover={openedPopover}/>
+                        {/* <MegaMenu content={item.path === "services"? ul_list : procurement } popoverLeave={popoverLeave} popoverEnter={popoverEnter} popoverAnchor={popoverAnchor} openedPopover={openedPopover} /> */}
                     </Box>
+                    <MegaMenu popoverLeave={popoverLeave} popoverEnter={popoverEnter} popoverAnchor={popoverAnchor} openedPopover={openedPopover} />
                     {/* <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
