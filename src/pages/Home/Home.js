@@ -25,14 +25,14 @@ const Home = () => {
 
     return (
         <Grid item xs={12} md={6} lg={4}>
-            <Grid container spacing={2} >
-                <Grid item xs={12} md={6} lg={6} sx={{ width: "100%" }} >
+            <Grid container spacing={2} sx={{height: {sm: "inherit", md: "70vh"}}} >
+                <Grid item xs={12} md={5} lg={6} sx={{ width: "100%" }} >
                     <Stack spacing={2} sx={{ ml: 4 }} >
                         <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}><Typography variant='h2' sx={{ color: "#042E76" }}>RAF OJAKH</Typography></Grow>
                         <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}><Typography variant="p" sx={{ pt: 4, pb: 4 }}>{t("About_us")}</Typography></Grow>
                     </Stack>
                 </Grid>
-                <Grid item xs={12} md={6} lg={6} sx={{ mt: { xs: 4 }, display: { xs: 'none', md: 'block' } }}>
+                <Grid item xs={12} md={7} lg={6} sx={{ mt: { xs: 4 }, display: { xs: 'none', md: 'block' } }}>
                     <div><AnimatedImages image1={home1} image2={home2} /></div>
                 </Grid>
             </Grid>

@@ -1,39 +1,35 @@
-.firstImg {
+.mainDiv {
     position: relative;
     animation-name: first;
     animation-duration: 4s;
+    /* width: 50%; */
 }
 
 .img1 {
-    position: relative;
-    height: 50vh;
+    position: absolute;
+    height: 500px;
     right: 0;
-    width: 70%;
+    width: 50%;
     /* width: 170px; */
     animation-name: second;
     animation-duration: 1s;
 }
 
-.secondImg {
-    /* position: relative; */
-    /* right: 0; */
-}
-
 .img2 {
     position: absolute;
-    right: 5%;
-    top: 30px;
-    height: 50vh;
-    width: 70%;
+    right: 200px;
+    top: 40px;
+    height: 460px;
+    width: 50%;
 }
 
 .blueDiv {
     position: absolute;
-    width: 20%;
-    height: 15.5vh;
+    width: 70px;
+    height: 150px;
     background-color: blue;
     z-index: 20;
-    right: 5%;
+    right: 160px;
     top: 350px;
 }
 /* 
