@@ -1,17 +1,17 @@
+import TabContext from '@mui/lab/TabContext'
+import TabList from '@mui/lab/TabList'
+import TabPanel from '@mui/lab/TabPanel'
+import { Box, Grid, Grow, Typography } from '@mui/material'
+import Tab from '@mui/material/Tab'
 import React, { useState } from 'react'
-import { Box, Grid, Link, Typography, Grow } from '@mui/material'
-import "./projects.css"
-import TechnicalImage from "../../assets/Technical image.jpg"
-import home2 from "../../assets/home2.jpg"
-import AnimatedImages from '../../components/AnimatedImage/AnimatedImages'
-import { projectCard } from "../../_mock/projectInfoCard"
-import ProjectCard from "../../components/ProjectCard"
-import { useTranslation } from "react-i18next";
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import { useTranslation } from "react-i18next"
 import { useNavigate } from 'react-router-dom'
+import home2 from "../../assets/home2.jpg"
+import TechnicalImage from "../../assets/Technical image.jpg"
+import AnimatedImages from '../../components/AnimatedImage/AnimatedImages'
+import ProjectCard from "../../components/ProjectCard"
+import { projectCard } from "../../_mock/projectInfoCard"
+import "./projects.css"
 
 const Projects = () => {
     const [value, setValue] = useState('all');
@@ -22,10 +22,6 @@ const Projects = () => {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
-
-    const handleNavigate = (title) => {
-        navigate('/details', { title })
-    }
 
     const projectContent = t("Projects", { returnObjects: true });
 

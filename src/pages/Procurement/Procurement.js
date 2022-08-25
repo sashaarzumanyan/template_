@@ -7,31 +7,18 @@ import { procurement } from '../../_mock/procurement'
 const Procurement = () => {
 
     return (
-        <Grid item xs={12} md={5} lg={4} 
-                   sx={{ padding: "4% 4% 10%" }}
-                >
+        <Grid item xs={12} md={5} lg={4}>
             <Typography
                 variant='h2'
                 sx={{ color: "#042E76", marginBottom: "100px", }}
-            >  <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...( { timeout: 1500 })}><div>EXPLORE OUR PROCUREMENT ACTIVITES</div></Grow>
+            >  <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}><div>EXPLORE OUR PROCUREMENT ACTIVITES</div></Grow>
             </Typography>
-            <Box sx={{
-                width: "100%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "left",
-            }}>
+            <Box >
 
-                <Grid container spacing={14} sx={{
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}>
+                <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                     {procurement.map(({ title, img }) => {
                         return (
-                            <Grid item xs={10} md={6}>
+                            <Grid item xs={10} md={5} >
                                 <TechnicalCard title={title} resource={'Procurements'} img={img} />
                             </Grid>
                         )
