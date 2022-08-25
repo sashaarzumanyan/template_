@@ -66,7 +66,7 @@ const Home = () => {
                             <h3 style={{ color: "#042E76" }}>Technical Assistance</h3>
                             <Box className='menu'>
                                 {team_specific.map((e, index) => {
-                                    return <a className='li'>{e}</a>
+                                    return <a href='#' className='li'>{e}</a>
                                 })}
                             </Box>
                         </Stack>
@@ -82,9 +82,8 @@ const Home = () => {
                                 key={index}
                                 whileHover={{ scale: 0.8 }}
                                 whileTap={{ scale: 1 }}
-                            // style={{ width: "100px" }}
                             >
-                                <img src={img} style={{ maxWidth: "175px" }} />
+                                <img src={img} alt="Company images" style={{ maxWidth: "175px" }} />
                             </motion.div>
                         )
                     })}

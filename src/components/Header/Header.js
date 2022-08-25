@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
@@ -8,22 +9,20 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { navConf } from '../../_mock/navConfigs'
-import Button from '@mui/material/Button';
-import { useNavigate, useParams } from 'react-router-dom';
-import LanguagePopover from '../LangPopover';
-import Logo from '../../assets/raf_logo_small.png';
-import { click } from '@testing-library/user-event/dist/click';
-import MegaMenu from '../MegaMenu/MegaMenu';
-import {procurement} from '../../_mock/procurement'
+import React, { memo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import Logo from '../../assets/raf_logo_small.png';
+import { navConf } from '../../_mock/navConfigs';
+import { procurement } from '../../_mock/procurement';
+import LanguagePopover from '../LangPopover';
+import MegaMenu from '../MegaMenu/MegaMenu';
 
 
 function DrawerAppBar(props) {
-    const { window, scrollY, offsetY } = props;
+    const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false);
     const navigate = useNavigate();
     const popoverAnchor = useRef(null);
@@ -71,7 +70,7 @@ function DrawerAppBar(props) {
 
     const popoverEnter = ({ currentTarget }) => {
         setOpenedPopover(true);
-        setLabel(currentTarget.attributes.label.nodeValue)        
+        setLabel(currentTarget.attributes.label.nodeValue)
     };
 
     const popoverLeave = ({ currentTarget }) => {
@@ -119,14 +118,14 @@ function DrawerAppBar(props) {
                                 <Button
                                     {...servicesProps(item.path)}
                                     // aria-owns={open && item.path === "services" ? 'mouse-over-popover' : undefined}
-                                    onClick={(e) => handleNavigate(item.path, e)} key={item.path} sx={{padding: "35px 10px", fontSize: '16px', color: 'inherit' }}
+                                    onClick={(e) => handleNavigate(item.path, e)} key={item.path} sx={{ padding: "35px 10px", fontSize: '16px', color: 'inherit' }}
                                 >
                                     {item.title}
                                 </Button>
                             </>
                         ))}
                     </Box>
-                    <MegaMenu content={label === "services"? ul_list : label === "procurement" ?procurement : null } popoverLeave={popoverLeave} popoverEnter={popoverEnter} popoverAnchor={popoverAnchor} openedPopover={openedPopover} />
+                    <MegaMenu content={label === "services" ? ul_list : label === "procurement" ? procurement : null} popoverLeave={popoverLeave} popoverEnter={popoverEnter} popoverAnchor={popoverAnchor} openedPopover={openedPopover} />
                     <LanguagePopover />
                 </Toolbar>
             </AppBar>
@@ -155,5 +154,5 @@ function DrawerAppBar(props) {
 }
 
 
-export default DrawerAppBar;
+export default memo(DrawerAppBar)
 

@@ -1,20 +1,18 @@
-import { Box, Chip, Grid, Stack, Typography, Grow, ListItem, ListItemIcon, ListItemText } from '@mui/material'
-import React, { useState } from 'react'
-import { useTranslation } from "react-i18next";
 import CircleIcon from '@mui/icons-material/Circle';
-import AnimatedImages from '../components/AnimatedImage/AnimatedImages'
-import { setPageProps } from '../redux/actions/setPageInfo'
-import { projectCard } from "../_mock/projectInfoCard"
-import ProjectCardI from "../components/ProjectCard"
-import vector from '../assets/vector.jpg'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { Box, Chip, Grid, Grow, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { useTranslation } from "react-i18next";
+import { useDispatch } from 'react-redux';
+import vector from '../assets/vector.jpg';
+import AnimatedImages from '../components/AnimatedImage/AnimatedImages';
+import ProjectCardI from "../components/ProjectCard";
+import { setPageProps } from '../redux/actions/setPageInfo';
+import { projectCard } from "../_mock/projectInfoCard";
 
 const SinglePage = ({ resource, image1, image2, section }) => {
     const { t } = useTranslation();
     const [id, setId] = useState("grid")
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const handleClick = (e) => {
         setId(e)
         dispatch(setPageProps({
@@ -29,9 +27,9 @@ const SinglePage = ({ resource, image1, image2, section }) => {
     const item = Array.isArray(resourceObject) && section ? resourceObject.find(r => r.section === section) : resourceObject;
     console.log('item', item)
     return (
-        <Grid container sx={{ height: { padding: "4% 4%" } }}>
+        <Grid container >
             <Grid item xs={12} md={12} lg={6} sx={{ padding: "35px" }} >
-                <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Typography variant='h2' sx={{ color: "#042E76", marginBottom: "40px" }}>
+                <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Typography variant='h2' sx={{ color: "#042E76", marginBottom: "40px", fontSize: {xs: "2rem", sm: "3.75rem"} }}>
                     {item.title}
                 </Typography></Grow>
                 <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Box sx={{ width: "82%" }}>
@@ -103,9 +101,9 @@ const SinglePage = ({ resource, image1, image2, section }) => {
                 </Box> */}
             </Grid>
 
-            <Grid item xs={12} md={12} lg={6} sx={{ mt: { xs: 4 }, paddingLeft: { md: '3%' }, display: { xs: 'none', md: 'block' } }}>
-                <div style={{ width: '80%', position: 'relative', display: 'block' }}>
-                    <AnimatedImages style={{ width: '80%', position: 'relative', display: 'block' }} image1={vector} image2={image1} />
+            <Grid item xs={12} md={7} lg={6} sx={{ mt: { xs: 4 }, paddingLeft: { md: '3%' }, display: { xs: 'none', lg: 'block' } }}>
+                <div >
+                    <AnimatedImages  image1={vector} image2={image1} />
                 </div>
             </Grid>
             <Box sx={{ position: 'relative' }}>

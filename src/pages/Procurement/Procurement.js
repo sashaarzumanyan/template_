@@ -10,7 +10,7 @@ const Procurement = () => {
         <Grid item xs={10} md={5} lg={4}>
             <Box>
                 <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}>
-                    <Typography variant='h2' sx={{ color: "#042E76", marginBottom: "100px", fontSize: {xs:"1.75rem", sm: "inherit"}}}>
+                    <Typography variant='h2' sx={{ color: "#042E76", marginBottom: "100px", fontSize: {xs:"1.75rem", sm: "3.75rem"}}}>
                         EXPLORE OUR PROCUREMENT ACTIVITES
                     </Typography></Grow>
             </Box>

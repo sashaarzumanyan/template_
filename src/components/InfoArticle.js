@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, Grow } from '@mui/material';
-import React from 'react';
+import React, { memo } from 'react';
 
 const InfoArticle = ({ image, text, title, index }) => {
     const isReverse = Boolean(index % 2)
@@ -18,4 +18,4 @@ const InfoArticle = ({ image, text, title, index }) => {
     )
 }
 
-export default InfoArticle
+export default memo(InfoArticle) 

@@ -1,6 +1,6 @@
 import CircleIcon from '@mui/icons-material/Circle';
 import { Grid, Grow, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useTranslation } from "react-i18next";
 import InfoArticle from '../../components/InfoArticle';
 import { articleInfo } from '../../_mock/aboutPageContext';

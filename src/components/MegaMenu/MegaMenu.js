@@ -1,7 +1,6 @@
 import { Button, Popover } from "@mui/material";
 import { makeStyles } from '@mui/styles';
-import React, { useState, useRef } from "react";
-import { useTranslation } from "react-i18next";
+import React, {  memo } from "react";
 
 
 const useStyles = makeStyles(theme => ({
@@ -17,10 +16,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const MegaMenu = ({ popoverLeave, popoverEnter, popoverAnchor, openedPopover, content=[] }) => {
-
-    const { t } = useTranslation();
-
-    const ul_list = t("Industries", { returnObjects: true });
 
     const classes = useStyles();
 
@@ -60,4 +55,4 @@ const MegaMenu = ({ popoverLeave, popoverEnter, popoverAnchor, openedPopover, co
     );
 };
 
-export default MegaMenu;
+export default memo(MegaMenu)

@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 import { setPageProps } from '../redux/actions/setPageInfo'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { memo } from 'react';
 
 
 const ProjectCard = ({ newsCard = false, title, text, image, dateInfo, cardStyle, resource }) => {
@@ -21,7 +22,7 @@ const ProjectCard = ({ newsCard = false, title, text, image, dateInfo, cardStyle
 
     return (
         <Box sx={{
-            width: "400px",
+            width: "100%",
             border: "none",
             display: "flex",
             justifyContent: "cemter",
@@ -93,4 +94,4 @@ const ProjectCard = ({ newsCard = false, title, text, image, dateInfo, cardStyle
     );
 }
 
-export default ProjectCard
+export default memo(ProjectCard) 

@@ -5,7 +5,6 @@ import { Box, Grid, Grow, Typography } from '@mui/material'
 import Tab from '@mui/material/Tab'
 import React, { useState } from 'react'
 import { useTranslation } from "react-i18next"
-import { useNavigate } from 'react-router-dom'
 import home2 from "../../assets/home2.jpg"
 import TechnicalImage from "../../assets/Technical image.jpg"
 import AnimatedImages from '../../components/AnimatedImage/AnimatedImages'
@@ -15,7 +14,6 @@ import "./projects.css"
 
 const Projects = () => {
     const [value, setValue] = useState('all');
-    const navigate = useNavigate();
     const { t } = useTranslation();
 
 
