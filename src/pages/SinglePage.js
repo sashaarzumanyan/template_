@@ -11,14 +11,14 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 const SinglePage = ({ resource, image1, image2, section }) => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const [id, setId] = useState("grid")
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleClick = (e) => {
         setId(e)
         dispatch(setPageProps({
-            image1:image1,
+            image1: image1,
             image2: image1,
             section,
             resource,
@@ -29,67 +29,67 @@ const SinglePage = ({ resource, image1, image2, section }) => {
     const item = Array.isArray(resourceObject) && section ? resourceObject.find(r => r.section === section) : resourceObject;
     console.log('item', item)
     return (
-        <Grid container sx={{height: { padding: "4% 4%"}}}>
+        <Grid container sx={{ height: { padding: "4% 4%" } }}>
             <Grid item xs={12} md={12} lg={6} sx={{ padding: "35px" }} >
-                <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...( { timeout: 1500 })}><Typography variant='h2' sx={{ color: "#042E76", marginBottom: "40px" }}>
+                <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Typography variant='h2' sx={{ color: "#042E76", marginBottom: "40px" }}>
                     {item.title}
                 </Typography></Grow>
-                <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...( { timeout: 1500 })}><Box sx={{ width: "82%" }}>
+                <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Box sx={{ width: "82%" }}>
                     <Typography>  {item.content || ''}</Typography>
                 </Box></Grow>
                 {
                     !item.characteristics_title
-                    ? null
-                    : (
-                        <div style={{ position: 'relative', paddingTop: '5vh', paddingBottom: '5vh'}}>
-                            <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...( { timeout: 1500 })}><Box sx={{ width: "82%" }}>
-                                <Typography
-                                    variant="h5"
-                                    component="div"
-                                    sx={{
-                                        width: '100%',
-                                        position: "relative",
-                                        bottom: "10%",
-                                        color: "042E76",
-                                        // textAlign: "left",
-                                        fontWeight: "600",
-                                    }}>
-                                    {item.characteristics_title}
-                                </Typography>
-                            </Box></Grow>
-                        </div>
-                        
-                    )
+                        ? null
+                        : (
+                            <div style={{ position: 'relative', paddingTop: '5vh', paddingBottom: '5vh' }}>
+                                <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Box sx={{ width: "82%" }}>
+                                    <Typography
+                                        variant="h5"
+                                        component="div"
+                                        sx={{
+                                            width: '100%',
+                                            position: "relative",
+                                            bottom: "10%",
+                                            color: "042E76",
+                                            // textAlign: "left",
+                                            fontWeight: "600",
+                                        }}>
+                                        {item.characteristics_title}
+                                    </Typography>
+                                </Box></Grow>
+                            </div>
+
+                        )
                 }
                 {
                     !item.characteristics
-                    ? null
-                    : (
-                        <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...( { timeout: 1500 })}><Box sx={{ width: "82%" }}>
-                            <Typography variany="h4" sx={{ paddingBottom: '7vh', fontStyle: 'italic'}}>  {item.characteristics || ''}</Typography>
-                        </Box></Grow>
-                    )
+                        ? null
+                        : (
+                            <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Box sx={{ width: "82%" }}>
+                                <Typography variany="h4" sx={{ paddingBottom: '7vh', fontStyle: 'italic' }}>  {item.characteristics || ''}</Typography>
+                            </Box></Grow>
+                        )
                 }
                 {
                     !item.characteristics_features
-                    ? null
-                    : (
-                        <Grid spacing={2} container xs={12} md={12} lg={12} sx={{ color: "#042E76", margin: "10px 0", width: "80%" }}>
-                            {item.characteristics_features.map((e, i) => {
-                                return (
-                                    <Grid item md={12} >
-                                        <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...( { timeout: 1500 })}><ListItem disablePadding>
-                                            <ListItemIcon>
-                                                <CircleIcon fontSize="small" />
-                                            </ListItemIcon>
-                                            <ListItemText primary={e} />
-                                        </ListItem>
-                                        </Grow>
-                                    </Grid>
-                                )
-                            })}
-                        </Grid>
-                    )
+                        ? null
+                        : (
+                            <Grid spacing={2} container xs={12} md={12} lg={12} sx={{ color: "#042E76", margin: "10px 0", width: "80%" }}>
+                                {item.characteristics_features.map((e, i) => {
+                                    return (
+                                        <Grid item md={12} >
+                                            <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><ListItem disablePadding>
+                                                <ListItemIcon>
+                                                    <CircleIcon fontSize="small" />
+                                                </ListItemIcon>
+                                                <ListItemText primary={e} />
+                                            </ListItem>
+                                            </Grow>
+                                        </Grid>
+                                    )
+                                })}
+                            </Grid>
+                        )
                 }
                 {/* <Box className='container'
                     sx={{ display: "flex", flexDirection: { md: "column", lg: "row" } }}
@@ -103,8 +103,10 @@ const SinglePage = ({ resource, image1, image2, section }) => {
                 </Box> */}
             </Grid>
 
-            <Grid item xs={12} md={12} lg={6} sx={{ mt: { xs: 4 }, paddingLeft: {md: '3%'}, display: { xs: 'none', md: 'block' } }}>
-                <div style={{ width: '80%', position: 'relative', display: 'block'}}><AnimatedImages style={{ width: '80%', position: 'relative', display: 'block'}} image1={vector} image2={image1} /></div>
+            <Grid item xs={12} md={12} lg={6} sx={{ mt: { xs: 4 }, paddingLeft: { md: '3%' }, display: { xs: 'none', md: 'block' } }}>
+                <div style={{ width: '80%', position: 'relative', display: 'block' }}>
+                    <AnimatedImages style={{ width: '80%', position: 'relative', display: 'block' }} image1={vector} image2={image1} />
+                </div>
             </Grid>
             <Box sx={{ position: 'relative' }}>
                 <Stack direction="row" spacing={1} sx={{ margin: "10% 0 3% 2%" }}>

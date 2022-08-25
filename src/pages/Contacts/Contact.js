@@ -8,9 +8,8 @@ import home2 from "../../assets/home2.jpg";
 const Contact = () => {
     const {t} = useTranslation();
     return (
-        <Grid container sx={{ height: "80vh", padding: "4% 4%" }}>
-            <Grid item xs={12} md={6} lg={6} 
-            >
+        <Grid container sx={{ height: "80vh" }}>
+            <Grid item xs={12} md={6} lg={6} sx={{padding: "4% 4%"}}>
             <Typography variant='h2' sx={{ color: "#042E76", marginBottom: "100px" }}>
                 <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...( { timeout: 1500 })}><div>CONTACTS</div></Grow>
             </Typography>
@@ -30,7 +29,7 @@ const Contact = () => {
                 </Box></Grow>
             </Grid>
             <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...( { timeout: 1500 })}><Grid item xs={12} md={6} lg={6} sx={{ mt: { xs: 4 }, display: { xs: 'none', md: 'block' } }}>
-                <div style={{ width: '80%', position: 'relative', display: 'block'}}><AnimatedImages image1={home1} image2={home2} /></div>
+                <div ><AnimatedImages image1={home1} image2={home2} /></div>
             </Grid></Grow>
         </Grid>
     )

@@ -1,7 +1,7 @@
+import { Box, Chip, Divider, Grid, Grow, Stack, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import { Box, Chip, Grid, Link, Stack, Typography, Grow, Divider } from '@mui/material'
-import { projectCard } from "../../_mock/projectInfoCard"
 import ProjectCardI from "../../components/ProjectCard"
+import { projectCard } from "../../_mock/projectInfoCard"
 
 const News = () => {
 
