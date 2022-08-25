@@ -17,7 +17,7 @@ const HomeCard = ({ image, title, resource }) => {
     }
     return (
         <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
-            <Card sx={{ width: { md: "100%", xs: "700px" } }} onClick={handleClick}>
+            <Card sx={{ width: { md: "100%", xs: "100%" } }} onClick={handleClick}>
                 <CardActionArea sx={{}}>
                     <CardMedia
                         component="img"

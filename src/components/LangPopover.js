@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import i18next from "i18next";
 // material
 import { alpha } from '@mui/material/styles';
@@ -33,7 +33,7 @@ const LANGS = [
 
 // ----------------------------------------------------------------------
 
-export default function LanguagePopover() {
+ function LanguagePopover() {
     const selected = localStorage.getItem("i18nextLng") || "en";
 
     const anchorRef = useRef(null);
@@ -100,3 +100,5 @@ export default function LanguagePopover() {
         </>
     );
 }
+
+export default memo(LanguagePopover)
