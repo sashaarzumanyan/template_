@@ -9,7 +9,7 @@ import ProjectCardI from "../components/ProjectCard";
 import { setPageProps } from '../redux/actions/setPageInfo';
 import { projectCard } from "../_mock/projectInfoCard";
 
-const SinglePage = ({ resource, image1, image2, section }) => {
+const SinglePage = ({ resource, image1, image2, section , pageTitle}) => {
     const { t } = useTranslation();
     const [id, setId] = useState("grid")
     const dispatch = useDispatch();

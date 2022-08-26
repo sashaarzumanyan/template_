@@ -17,7 +17,7 @@ import Jobs from './Jobs/Jobs';
 
 
 const Main = () => {
-  const {singlePageInfo: {image1, section, image2, resource}} = useSelector(state => state)
+  const {singlePageInfo: {image1, section, image2, resource, pageTitle}} = useSelector(state => state)
   return (
     <div style={{ width: '100%', height: 'auto'}}>
         <Routes>
@@ -29,7 +29,7 @@ const Main = () => {
           <Route path='contacts' element={<Contact />} />
           <Route path='successful-stories' element={<StoryPage />} />
           <Route path='services' element={<Industries />} />
-          <Route path='details' element={<SinglePage section={section} image1={image1} image2={image2} resource={resource} />} />
+          <Route path='details' element={<SinglePage section={section} image1={image1} image2={image2} resource={resource} pageTitle={pageTitle} />} />
           <Route path='news' element={<News />} />
           <Route path='careers' element={<Jobs />} />
           <Route path="/login" element={<LoginForm />} />

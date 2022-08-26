@@ -125,7 +125,14 @@ function DrawerAppBar(props) {
                             </>
                         ))}
                     </Box>
-                    <MegaMenu content={label === "services" ? ul_list : label === "procurement" ? procurement : null} popoverLeave={popoverLeave} popoverEnter={popoverEnter} popoverAnchor={popoverAnchor} openedPopover={openedPopover} />
+                    <MegaMenu
+                        content={label === "services" ? ul_list : label === "procurement" ? procurement : null}
+                        popoverLeave={popoverLeave}
+                        popoverEnter={popoverEnter}
+                        popoverAnchor={popoverAnchor}
+                        openedPopover={openedPopover}
+                        label={label}
+                    />
                     <LanguagePopover />
                 </Toolbar>
             </AppBar>
