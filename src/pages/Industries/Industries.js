@@ -14,7 +14,7 @@ const Industries = () => {
     const imagesArray = [tenderPic, barrel, cargo, barrel ]
 
     return (
-         <Grid item xs={12} md={5} lg={4}>
+         <Grid item xs={12} md={5} lg={4} sx={{padding: "4% 4% 10%"}}>
             <Typography variant='h2' sx={{ color: "#042E76", marginBottom: "100px" }}>
                 <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...( { timeout: 1500 })}><div>EXPLORE OUR INDUSTRIES</div></Grow>
             </Typography>

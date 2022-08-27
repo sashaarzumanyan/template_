@@ -12,7 +12,7 @@ const News = () => {
     };
 
     return (
-        <Box>
+        <Box sx={{padding: "4% 4% 10%"}}>
             <Grid container >
                 <Grid xs={12} md={9}>
                     <Typography

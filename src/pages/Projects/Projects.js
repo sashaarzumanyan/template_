@@ -24,25 +24,28 @@ const Projects = () => {
     const projectContent = t("Projects", { returnObjects: true });
 
     return (
-        <Box>
-            <Grid container sx={{height: {md: "70vh", xs: "inherit"}}} >
+        <Box sx={{ padding: "4% 4% 10%" }}>
+            <Grid container sx={{ height: { md: "70vh", xs: "inherit", } }} >
                 <Grid item xs={12} md={5} lg={6}>
                     <Typography variant='h2' sx={{ color: "#042E76" }}>
                         <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}><div>OUR PROJECTS</div></Grow>
                     </Typography>
-                    <Box >
+                    <Box sx={{ mt: 3 }}>
                         <Typography>{projectContent.content}</Typography>
                     </Box>
                 </Grid>
 
-                <Grid item xs={12} md={7} lg={6} sx={{  display: { xs: 'none', md: 'block' } }}>
+                <Grid item xs={12} md={7} lg={6} sx={{ display: { xs: 'none', md: 'block' } }}>
                     <div ><AnimatedImages image1={home2} image2={TechnicalImage} /></div>
                 </Grid>
             </Grid>
             <Box sx={{ position: 'relative', width: '100%', typography: 'body1', mt: 4 }}>
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                        <TabList onChange={handleChange} sx={{ justifyContent: "space-around"}}>
+                        <TabList onChange={handleChange} sx={{ justifyContent: "space-around" }} variant="scrollable"
+                            scrollButtons
+                            allowScrollButtonsMobile
+                            aria-label="scrollable auto tabs example">
                             <Tab label="Complated Projects" value="current" />
                             <Tab label="Current Projects" value="complated" />
                             <Tab label="Vodka Page" value="vodka" />
@@ -53,7 +56,7 @@ const Projects = () => {
                             {projectCard.filter((card) => card.category === value || value === "all" ? card : null)
                                 .map(({ title, text, image, dateInfo, category }) => {
                                     return (
-                                        <Grid item xs={12} sm={12} md={6} lg={4}  sx={{display: "flex" , justifyContent: "center", alignItems: "baseline"}} >
+                                        <Grid item xs={12} sm={12} md={6} lg={4} sx={{ display: "flex", justifyContent: "center", alignItems: "baseline" }} >
                                             <ProjectCard image={image} resource={'Projects'} text={text} title={title} dateInfo={dateInfo} />
                                         </Grid>
                                     )

@@ -8,7 +8,7 @@ const Procurement = () => {
 
     return (
         <Grid item xs={10} md={5} lg={4}>
-            <Box>
+            <Box sx={{padding: "4% 4% 0%" }}>
                 <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}>
                     <Typography variant='h2' sx={{ color: "#042E76", marginBottom: "100px", fontSize: {xs:"1.75rem", sm: "3.75rem"}}}>
                         EXPLORE OUR PROCUREMENT ACTIVITES

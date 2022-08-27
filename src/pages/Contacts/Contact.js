@@ -8,7 +8,7 @@ import home2 from "../../assets/home2.jpg";
 const Contact = () => {
     const {t} = useTranslation();
     return (
-        <Grid container sx={{ height: "80vh" }}>
+        <Grid container sx={{ height: "80vh", padding: "4% 4% 10%" }}>
             <Grid item xs={12} md={6} lg={6} sx={{padding: "4% 4%"}}>
             <Typography variant='h2' sx={{ color: "#042E76", marginBottom: "100px" }}>
                 <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...( { timeout: 1500 })}><div>CONTACTS</div></Grow>
