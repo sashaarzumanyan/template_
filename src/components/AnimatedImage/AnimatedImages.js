@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import "./animatedImage.css"
 
-const AnimatedImages = ({ image1, image2 }) => {
+const AnimatedImages = ({ image1, image2, firstProps }) => {
 
   return (
     <div className='mainDiv'>
@@ -13,6 +13,7 @@ const AnimatedImages = ({ image1, image2 }) => {
         className='img1'
         src={image1}
         alt='animImage'
+        style={{...firstProps}}
       />
       <motion.img
         className='img2'

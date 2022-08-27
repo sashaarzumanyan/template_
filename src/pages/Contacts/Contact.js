@@ -3,12 +3,14 @@ import { Box, Grid, Stack, Typography, Grow } from '@mui/material';
 import AnimatedImages from '../../components/AnimatedImage/AnimatedImages';
 import { useTranslation } from "react-i18next";
 import home1 from "../../assets/home1.jpg";
-import home2 from "../../assets/home2.jpg";
+// import home2 from "../../assets/home2.jpg";
+
+const home2 = "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
 
 const Contact = () => {
     const {t} = useTranslation();
     return (
-        <Grid container sx={{ height: "80vh", padding: "4% 4% 10%" }}>
+        <Grid container sx={{ height: "100vh", padding: "4% 4% 10%" }}>
             <Grid item xs={12} md={6} lg={6} sx={{padding: "4% 4%"}}>
             <Typography variant='h2' sx={{ color: "#042E76", marginBottom: "100px" }}>
                 <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...( { timeout: 1500 })}><div>CONTACTS</div></Grow>

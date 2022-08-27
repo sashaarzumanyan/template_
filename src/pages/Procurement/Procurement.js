@@ -1,10 +1,19 @@
 import { Grid, Typography, Grow } from '@mui/material'
 import { Box } from '@mui/system'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TechnicalCard from '../../components/technicalCard'
-import { procurement } from '../../_mock/procurement'
+// import { procurement } from '../../_mock/procurement'
+import image1 from "../../assets/Technical image.jpg";
+import image2 from "../../assets/image2.jpg";
+import axios from 'axios'
 
 const Procurement = () => {
+    const [procurement, getProcurement] = useState([]);
+    
+    useEffect(()=>{
+        axios.get(`http://localhost:3001/procurement`)
+            .then(res => getProcurement(res.data))
+    }, [])
 
     return (
         <Grid item xs={10} md={5} lg={4}>
@@ -17,10 +26,10 @@ const Procurement = () => {
             <Box >
 
                 <Grid container spacing={4} sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    {procurement.map(({ title, img }) => {
+                    {procurement.map(({ title, img }, i) => {
                         return (
                             <Grid item xs={10} md={5} >
-                                <TechnicalCard title={title} resource={'Procurements'} img={img} />
+                                <TechnicalCard title={title} resource={'Procurements'} img={i%2 === 0 ? image1 : image2} />
                             </Grid>
                         )
                     })}

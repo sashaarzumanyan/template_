@@ -67,7 +67,7 @@ const imagesArray = [tenderPic, barrel, cargo, barrel ]
                 >
                     <div style={{ width: "100%", display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
                         {content.map((e, index) => {
-                            return <Button onClick={() => handleNavigate(index, e )} sx={{ color: "#042E76", borderColor: "#042E76", margin: '10px 0' }} variant="outlined" href="#contained-buttons">{e.title}</Button>
+                            return <Button onClick={() => handleNavigate(index, e )} sx={{ color: "black", margin: '10px 0' }} variant="text" href="#contained-buttons">{e.title}</Button>
                         })}
                     </div>
                 </Popover>

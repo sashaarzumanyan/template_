@@ -1,6 +1,6 @@
 import CircleIcon from '@mui/icons-material/Circle';
-import { Box, Chip, Grid, Grow, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import { Box, Chip, Grid, Grow, ListItem, ListItemIcon, ListItemText, Pagination, Stack, Typography } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import { useDispatch } from 'react-redux';
 import vector from '../assets/vector.jpg';
@@ -8,28 +8,51 @@ import AnimatedImages from '../components/AnimatedImage/AnimatedImages';
 import ProjectCardI from "../components/ProjectCard";
 import { setPageProps } from '../redux/actions/setPageInfo';
 import { projectCard } from "../_mock/projectInfoCard";
+import axios from 'axios'
 
-const SinglePage = ({ resource, image1, image2, section , pageTitle}) => {
-    const { t } = useTranslation();
-    const [id, setId] = useState("grid")
-    const dispatch = useDispatch();
-    const handleClick = (e) => {
-        setId(e)
-        dispatch(setPageProps({
-            image1: image1,
-            image2: image1,
-            section,
+
+const SinglePage = ({ resource, image1, image2, section, pageTitle }) => {
+
+    const [projects, getProjects] = useState([]);
+    const [page, setPage] = React.useState(1);
+    const [totalCount, setTotal] = useState()
+
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+      };
+
+      const { t } = useTranslation();
+      const [id, setId] = useState("grid")
+      const dispatch = useDispatch();
+      const handleClick = (e) => {
+          setId(e)
+          dispatch(setPageProps({
+              image1: image1,
+              image2: image1,
+              section,
             resource,
         }))
     };
 
+
+    useEffect(()=>{
+        axios.get(`http://localhost:3001/projects?_page=${page}&_limit=6`)
+            .then(res => getProjects(res.data))
+
+        axios.get(`http://localhost:3001/projects?`)
+            .then(res => setTotal(res.data.length))
+
+        console.log(Math.ceil(7 / 6) );
+        
+    }, [page])
+    
     const resourceObject = t(resource, { returnObjects: true });
     const item = Array.isArray(resourceObject) && section ? resourceObject.find(r => r.section === section) : resourceObject;
     console.log('item', item)
     return (
-        <Grid container >
+        <Grid container  sx={{ padding: "4% 4% 10%" }}>
             <Grid item xs={12} md={12} lg={6} sx={{ padding: "35px" }} >
-                <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Typography variant='h2' sx={{ color: "#042E76", marginBottom: "40px", fontSize: {xs: "2rem", sm: "3.75rem"} }}>
+                <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Typography variant='h2' sx={{ color: "#042E76", marginBottom: "40px", fontSize: { xs: "2rem", sm: "3.75rem" } }}>
                     {item.title}
                 </Typography></Grow>
                 <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Box sx={{ width: "82%" }}>
@@ -103,7 +126,7 @@ const SinglePage = ({ resource, image1, image2, section , pageTitle}) => {
 
             <Grid item xs={12} md={7} lg={6} sx={{ mt: { xs: 4 }, paddingLeft: { md: '3%' }, display: { xs: 'none', lg: 'block' } }}>
                 <div >
-                    <AnimatedImages  image1={vector} image2={image1} />
+                    <AnimatedImages image1={vector} image2={image1} />
                 </div>
             </Grid>
             <Box sx={{ position: 'relative' }}>
@@ -115,13 +138,20 @@ const SinglePage = ({ resource, image1, image2, section , pageTitle}) => {
                 <Grid container spacing={6} sx={{
                     padding: "3% 2%"
                 }}>
-                    {projectCard.map(({ title, text, image, dateInfo }) => {
+                    {projects.map(({ title, text, image, dateInfo }) => {
                         return (
                             <Grid item xs={12} sm={12} md={6} lg={4}  >
                                 <ProjectCardI cardStyle={id} newsCard={true} image={image} text={text} title={title} dateInfo={dateInfo} />
                             </Grid>
                         )
                     })}
+                    <div style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}>
+                        <Pagination
+                            page={page}
+                            count={Math.ceil(totalCount / 6)} variant="outlined" shape="rounded"
+                            onChange={handleChangePage}
+                        />
+                    </div>
                 </Grid>
             </Box>
         </Grid>

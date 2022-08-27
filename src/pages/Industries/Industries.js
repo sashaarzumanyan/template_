@@ -1,17 +1,25 @@
 import { Grid, Grow, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from "react-i18next"
 import barrel from '../../assets/barrel.jpg'
 import cargo from '../../assets/cargo.jpg'
 import tenderPic from '../../assets/Tender-Participation.jpg'
-import TechnicalCard from '../../components/technicalCard'
+import TechnicalCard from '../../components/technicalCard';
+import axios  from 'axios';
+
 
 const Industries = () => {
     const { t } = useTranslation();
+    // const [Industries, getIndustries] = useState([]);
 
     const ul_list = t("Industries", { returnObjects: true });
     const imagesArray = [tenderPic, barrel, cargo, barrel ]
+
+    // useEffect(()=>{
+    //     axios.get(`http://localhost:3001/Industries`)
+    //         .then(res => getIndustries(res.data))
+    // }, [])
 
     return (
          <Grid item xs={12} md={5} lg={4} sx={{padding: "4% 4% 10%"}}>

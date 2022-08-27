@@ -1,28 +1,143 @@
 {
-    "jobs" : [
-        {
-          "name": "Job Name 1",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-          "location": "Yerevan",
-          "jobTime": "Full Time"
-        },
-        {
-          "name": "Job Name 2",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-          "location": "Yerevan",
-          "jobTime": "Full Time"
-        },
-        {
-          "name": "Job Name 3",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-          "location": "Yerevan",
-          "jobTime": "Full Time"
-        },
-        {
-          "name": "Job Name 4",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-          "location": "Yerevan",
-          "jobTime": "Full Time"
-        }
+  "jobs": [
+    {
+      "name": "Job Name 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "location": "Yerevan",
+      "jobTime": "Full Time"
+    },
+    {
+      "name": "Job Name 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "location": "Yerevan",
+      "jobTime": "Full Time"
+    },
+    {
+      "name": "Job Name 3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "location": "Yerevan",
+      "jobTime": "Full Time"
+    },
+    {
+      "name": "Job Name 4",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "location": "Yerevan",
+      "jobTime": "Full Time"
+    }
+  ],
+  "Industries": [
+    {
+      "section": "tenders",
+      "title": "Participation in tenders",
+      "content": "The company is constantly actively involved in participating in tenders, which are announced by the national government of the Republic of Armenia as well as by the international State organizations and tries to be the first to respond whenever there is a new project to fulfill. Since 2012 up to nowadays we have been covering a series of important and significant projects providing different kinds of tender goods including construction materials, fuel, clothes, furniture, household items, computer items, household goods, agricultural equipment, special-purpose machinery, various types of pipeline valves and fittings, waste disposal bins  and many others. As mentioned above, except for local partners, we also have international collaborators, which are our regular partners and this aids in exporting goods  abroad, as well."
+    },
+    {
+      "section": "vodka",
+      "title": "Vodka production",
+      "content": "\"Raf-Ojakh\"produces \"Barrel\" and \"Petrol\" vodkas. Vodkas “Barrel” and “Petrol” are high-class products made on the basis of high-quality “Alpha” spirit, the purest water, have an extraordinary and distinguished taste and unique design. Vodkas “Barrel” and “Petrol” are unique with their crystal clear color and transparency. The natural ingredients fresh honey and syrup make them even more special. Vodkas “Barrel” and “Petrol” are made by the modern equipment of the plant “Chateau Arno” based on the old recipes. Vodkas“Barrel” and “Petrol” belong to the class of elite alcoholic beverages. From the first years of their existence, they have gained popularity in many countries of the world. Nowadays vodkas “Barrel” and “Petrol” are exported to Democratic Republic of China, Russian Federation, Belarus, Georgia, Turkmenistan, Bulgaria, Iraq, Lebanon, Syria, Israel, Jordania and the USA.",
+      "characteristics_title": "\"Barrel\" and “Petrol” vodkas characteristics",
+      "characteristics": "When producing \"Raf-Ojakh\" vodkas, we give priority to the following features",
+      "characteristics_features": [
+        "Attention to every detail",
+        "Elements emphasizing the Armenian",
+        "Non-standard, distinctive and outstanding design",
+        "Interesting and unique color combination",
+        "Unique and specific taste",
+        "Ingredients that provide the distinctive and special taste (syrup, honey, rice, which ensure the softness and delicacy of the vodka)",
+        "High quality \"Alfa\" kind of alcohol",
+        "Special production technology",
+        "High quality cleaning system"
       ]
+    },
+    {
+      "section": "cargo",
+      "title": "Cargo transportation",
+      "content": "\"Raf-Ojakh\" is also engaged in cargo transportation. Cargo transportation is carried out not only in the territory of the Republic of Armenia, but also in a number of countries around the world. We have a wide and large database of loyal and regular customers, local and international partners, which is replenished with collaborators day by day. This speaks of our great inexhaustible efforts and high quality work."
+    },
+    {
+      "section": "construction-materials",
+      "title": "Provision of construction materials",
+      "content": "\"Raf-Ojakh\" also has a construction materials store. We offer a wide and diverse range of construction products. Here even the most whimsical customer will find any product he needs. There are no restrictions and boundaries for us, there are no obstacles for us, we are not afraid of risks and introducing innovations or updates."
+    }
+  ],
+  "procurement": [
+    {
+      "title": "SCIENTIFIC & ANALYTICAL INSTRUMENTATION"
+    },
+    {
+      "title": "MACHINERIES & IMPLEMENTS"
+    },
+    {
+      "title": "EDUCATIONAL"
+    },
+    {
+      "title": "ENVIRONMENT & ENERGY"
+    },
+    {
+      "title": "MEDICAL & FORENSIC"
+    },
+    {
+      "title": "FOOD PROCESSING"
+    },
+    {
+      "title": "INFORMATION TECHNOLOGY"
+    },
+    {
+      "title": "COMMODITIES"
+    },
+    {
+      "title": "MISCELLANEOUS"
+    }
+  ],
+  "projects" : [
+    {
+      "title": "Agro-Industry, Marketing and Trade",
+      "dateInfo": "Cyprus | 2022 — 2024",
+      "text": "CYPRUS – Capacity Development for Market Surveillance (EuropeAid/140609/DH/SER/CY)",
+      "image": "https://scontent.fevn6-2.fna.fbcdn.net/v/t1.6435-9/109956535_292576142155862_7497604414499549625_n.jpg?stp=dst-jpg_p960x960&_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_ohc=fpzff5mCkT0AX-7gyhA&_nc_oc=AQmz5i1p57JNNrjIqQAwYVEhw76zFwvLOHPhvkNQeahzT5LJQQ-wrAa3McpK-dB7uxo&_nc_ht=scontent.fevn6-2.fna&oh=00_AT_KURRePiiGAQCriz3nAU7XArKQ6Nho0j6oSxKmL3auAw&oe=632DBFE1",
+      "category": "complated"
+    },
+    {
+      "title": "Procurement",
+      "dateInfo": "Ukraine | 2022 — On going",
+      "text": "UKRAINE – Supply of First Aid Kits for EUAM Ukraine – EUAM-22-11",
+      "image": "https://scontent-sof1-2.xx.fbcdn.net/v/t1.6435-9/193509171_515213109892163_8578340638309126930_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=Qgdnf9AASjgAX_JIYer&_nc_ht=scontent-sof1-2.xx&oh=00_AT-B96lrpRNQmAu0pC9Ws591-Zm5lwFiupxpbPRcJzRWdQ&oe=632F0535",
+      "category": "vodka"
+    },
+    {
+      "title": "Procurement",
+      "dateInfo": "Angola | 2022 — On going",
+      "text": "ANGOLA – Long Term Agreement UNOPS-LTA-2021-1003988 – Supply of Agricultural and Construction equipment worldwide",
+      "image": "https://scontent-sof1-2.xx.fbcdn.net/v/t1.6435-9/193632449_513982213348586_3988750366261356774_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=e3f864&_nc_ohc=P7WHqo2b430AX9vGghX&_nc_ht=scontent-sof1-2.xx&oh=00_AT_d-swRRRoBh7uNIdecqPHtzlqYv-Iw8u8TwLKw_rEvxg&oe=632F2481",
+      "category": "complated"
+    },
+    {
+      "title": "Technical Assistance",
+      "dateInfo": "Zambia | 2022 — 2026",
+      "text": "ZAMBIA – Aquaculture Project-Technical Assistance (ZAP-TA), Zambia – Ref.: INTPA/LUN/2021/EA-RE/0061",
+      "image": "https://scontent.fevn6-4.fna.fbcdn.net/v/t1.6435-9/181527314_496749715071836_1058735579978714488_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=e3f864&_nc_ohc=JiutSLiOoPwAX-IHTjl&_nc_ht=scontent.fevn6-4.fna&oh=00_AT9mFVNq-qRfCOq7767pxnNDtHrgHUh7d9nDrG0GfFUiYg&oe=632F0206",
+      "category": "current"
+    },
+    {
+      "title": "Machineries & Implements",
+      "dateInfo": "Egypt | 2021 — 2021",
+      "text": "ICB No: 1/2019/ G107- Item No. 1- Supply of 20 Agriculture Tractors",
+      "image": "https://scontent-sof1-2.xx.fbcdn.net/v/t1.6435-9/76679903_131394938273984_8455013941062402048_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=0hgTH9OBS2AAX82f3jW&tn=H8OgcRFxeOVCX72b&_nc_ht=scontent-sof1-2.xx&oh=00_AT8qk9vqNtDoD6xO8wfVG-xISf3kUXDL3Jz8tsimaV73Xw&oe=632DBA37",
+      "category": "current"
+    },
+    {
+      "title": "Technical Assistance",
+      "dateInfo": "ACP Countries | 2021 — 2022",
+      "text": "LATIN AMERICA and the CARIBBEAN “Lessons from the field: Strategies for effective implementation of Climate Focused",
+      "image": "https://scontent-sof1-2.xx.fbcdn.net/v/t1.6435-9/72479907_136108361135975_7467945381729402880_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=uvMT-Sa8qDcAX-p9DNy&_nc_ht=scontent-sof1-2.xx&oh=00_AT-BNxbXFW6m6_9cdVNTEe-Ut0n2BFBj62qulDsddBdUnw&oe=6330A745",
+      "category": "vodka"
+    },
+    {
+      "title": "Technical Assistance",
+      "dateInfo": "ACP Countries | 2021 — 2022",
+      "text": "LATIN AMERICA and the CARIBBEAN “Lessons from the field: Strategies for effective implementation of Climate Focused",
+      "image": "https://scontent-sof1-2.xx.fbcdn.net/v/t1.6435-9/193632449_513982213348586_3988750366261356774_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=e3f864&_nc_ohc=P7WHqo2b430AX9vGghX&_nc_ht=scontent-sof1-2.xx&oh=00_AT_d-swRRRoBh7uNIdecqPHtzlqYv-Iw8u8TwLKw_rEvxg&oe=632F2481",
+      "category": "vodka"
+    }
+  ]
 }

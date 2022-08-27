@@ -1,17 +1,24 @@
 import Table from '../../components/Table'
-import React, { useState } from 'react'
-import { jobs } from '../../_mock/jobsConfig'
+import React, { useEffect, useState } from 'react'
+// import { jobs } from '../../_mock/jobsConfig'
 import { Box, Breadcrumbs, Grid, Link, Typography,Grow } from '@mui/material'
-import JobCard from '../../components/JobCard'
-import BasicModal from '../../components/ModalWindow'
+import JobCard from '../../components/JobCard';
+import BasicModal from '../../components/ModalWindow';
 import { useTranslation } from "react-i18next";
+import axios  from 'axios';
 
 const Jobs = () => {
     const {t} = useTranslation()
     const [isOpen, setOpen] = useState(false);
+    const [jobs, getJobs] = useState([]);
 
     const handleClose = () => setOpen(false);
     const teamSpecific = t("team_specific", { returnObjects: true })
+
+    useEffect(()=>{
+        axios.get(`http://localhost:3001/jobs`)
+            .then(res => getJobs(res.data))
+    }, [])
 
     return (
         <div style= {{margin: "4% 4%"}}>
