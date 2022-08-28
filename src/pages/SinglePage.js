@@ -8,6 +8,7 @@ import AnimatedImages from '../components/AnimatedImage/AnimatedImages';
 import ProjectCardI from "../components/ProjectCard";
 import { setPageProps } from '../redux/actions/setPageInfo';
 import { projectCard } from "../_mock/projectInfoCard";
+import { useSelector } from 'react-redux';
 import axios from 'axios'
 
 
@@ -16,47 +17,46 @@ const SinglePage = ({ resource, image1, image2, section, pageTitle }) => {
     const [projects, getProjects] = useState([]);
     const [page, setPage] = React.useState(1);
     const [totalCount, setTotal] = useState()
+    const { singlePageInfo } = useSelector(state => state);
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
-      };
+    };
 
-      const { t } = useTranslation();
-      const [id, setId] = useState("grid")
-      const dispatch = useDispatch();
-      const handleClick = (e) => {
-          setId(e)
-          dispatch(setPageProps({
-              image1: image1,
-              image2: image1,
-              section,
+    const { t } = useTranslation();
+    const [id, setId] = useState("grid")
+    const dispatch = useDispatch();
+    const handleClick = (e) => {
+        setId(e)
+        dispatch(setPageProps({
+            image1: image1,
+            image2: image1,
+            section,
             resource,
         }))
     };
 
 
-    useEffect(()=>{
+    useEffect(() => {
         axios.get(`http://localhost:3001/projects?_page=${page}&_limit=6`)
             .then(res => getProjects(res.data))
 
         axios.get(`http://localhost:3001/projects?`)
             .then(res => setTotal(res.data.length))
 
-        console.log(Math.ceil(7 / 6) );
-        
     }, [page])
-    
+
     const resourceObject = t(resource, { returnObjects: true });
     const item = Array.isArray(resourceObject) && section ? resourceObject.find(r => r.section === section) : resourceObject;
     console.log('item', item)
     return (
-        <Grid container  sx={{ padding: "4% 4% 10%" }}>
-            <Grid item xs={12} md={12} lg={6} sx={{ padding: "35px" }} >
+        <Grid container sx={{ padding: "4% 4% 10%" }}>
+            <Grid item xs={12} md={12} lg={6} sx={{ padding: "35px", height: { md: "65vh", xs: "inherit" } }} >
                 <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Typography variant='h2' sx={{ color: "#042E76", marginBottom: "40px", fontSize: { xs: "2rem", sm: "3.75rem" } }}>
-                    {item.title}
+                    {item.title ? item.title : singlePageInfo.pageTitle}
                 </Typography></Grow>
                 <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Box sx={{ width: "82%" }}>
-                    <Typography>  {item.content || ''}</Typography>
+                    <Typography>  {item.content || singlePageInfo.paragraph}</Typography>
                 </Box></Grow>
                 {
                     !item.characteristics_title

@@ -10,6 +10,7 @@ import home2 from "../../assets/home2.jpg"
 import AnimatedImages from '../../components/AnimatedImage/AnimatedImages'
 import ProjectCard from "../../components/ProjectCard"
 
+
 import "./projects.css"
 
 const img = "https://scontent-sof1-2.xx.fbcdn.net/v/t1.6435-9/72479907_136108361135975_7467945381729402880_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=uvMT-Sa8qDcAX-p9DNy&_nc_ht=scontent-sof1-2.xx&oh=00_AT-BNxbXFW6m6_9cdVNTEe-Ut0n2BFBj62qulDsddBdUnw&oe=6330A745"
@@ -19,25 +20,27 @@ const Projects = () => {
     const { t } = useTranslation();
     const [projects, getProjects] = useState([]);
     const [page, setPage] = React.useState(1);
-    const [totalCount, setTotal] = useState()
+    const [totalCount, setTotal] = useState();
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
-      };
+    };
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+        setPage(1);
+
     };
 
-    useEffect(()=>{
-        axios.get(`http://localhost:3001/projects?_page=${page}&_limit=6&${value !== "all"? `category=${value}` : null}`)
+    useEffect(() => {
+        axios.get(`http://localhost:3001/projects?_page=${page}&_limit=6&${value !== "all" ? `category=${value}` : null}`)
             .then(res => getProjects(res.data))
 
-        axios.get(`http://localhost:3001/projects?${value !== "all"? `category=${value}` : null}`)
+        axios.get(`http://localhost:3001/projects?${value !== "all" ? `category=${value}` : null}`)
             .then(res => setTotal(res.data.length))
 
-        console.log(Math.ceil(7 / 6) );
-        
+        console.log(Math.ceil(7 / 6));
+
     }, [page, value])
 
     const projectContent = t("Projects", { returnObjects: true });
@@ -83,10 +86,10 @@ const Projects = () => {
                                     )
                                 })
                             }
-                            <div style={{width: "100%", display: "flex", justifyContent: "flex-end" }}>
+                            <div style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}>
                                 <Pagination
                                     page={page}
-                                    count={Math.ceil(totalCount / 6)} variant="outlined" shape="rounded" 
+                                    count={Math.ceil(totalCount / 6)} variant="outlined" shape="rounded"
                                     onChange={handleChangePage}
                                 />
                             </div>

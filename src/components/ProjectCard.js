@@ -16,7 +16,7 @@ const ProjectCard = ({ newsCard = false, title, text, image, dateInfo, cardStyle
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleClick = () => {
-        dispatch(setPageProps({ resource, image1: image, image2: image }))
+        dispatch(setPageProps({ resource, image1: image, image2: image, pageTitle: title, paragraph: text  }))
         navigate("/details")
     }
 
@@ -30,7 +30,7 @@ const ProjectCard = ({ newsCard = false, title, text, image, dateInfo, cardStyle
             position: "relative",
             flexWrap: ""
         }}>
-            <Card sx={{ boxShadow: 0 }} onClick={handleClick}>
+            <Card sx={{ boxShadow: 0, width: "100%" }} onClick={handleClick}>
                 <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}>
