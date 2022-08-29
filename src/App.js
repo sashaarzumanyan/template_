@@ -17,6 +17,7 @@ function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    // debugger
   }, [pathname, singlePageInfo])
   // const marginTop = useTransform(scrollY, offsetY, offsetY);
 

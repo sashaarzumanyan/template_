@@ -51,7 +51,7 @@ const SinglePage = ({ resource, image1, image2, section, pageTitle }) => {
     console.log('item', item)
     return (
         <Grid container sx={{ padding: "4% 4% 10%" }}>
-            <Grid item xs={12} md={12} lg={6} sx={{ padding: "35px", height: { md: "65vh", xs: "inherit" } }} >
+            <Grid item xs={12} md={12} lg={6} sx={{ padding: "35px",  }} >
                 <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Typography variant='h2' sx={{ color: "#042E76", marginBottom: "40px", fontSize: { xs: "2rem", sm: "3.75rem" } }}>
                     {item.title ? item.title : singlePageInfo.pageTitle}
                 </Typography></Grow>
@@ -91,27 +91,7 @@ const SinglePage = ({ resource, image1, image2, section, pageTitle }) => {
                             </Box></Grow>
                         )
                 }
-                {
-                    !item.characteristics_features
-                        ? null
-                        : (
-                            <Grid spacing={2} container xs={12} md={12} lg={12} sx={{ color: "#042E76", margin: "10px 0", width: "80%" }}>
-                                {item.characteristics_features.map((e, i) => {
-                                    return (
-                                        <Grid item md={12} >
-                                            <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><ListItem disablePadding>
-                                                <ListItemIcon>
-                                                    <CircleIcon fontSize="small" />
-                                                </ListItemIcon>
-                                                <ListItemText primary={e} />
-                                            </ListItem>
-                                            </Grow>
-                                        </Grid>
-                                    )
-                                })}
-                            </Grid>
-                        )
-                }
+
                 {/* <Box className='container'
                     sx={{ display: "flex", flexDirection: { md: "column", lg: "row" } }}
                 >
@@ -129,7 +109,30 @@ const SinglePage = ({ resource, image1, image2, section, pageTitle }) => {
                     <AnimatedImages image1={vector} image2={image1} />
                 </div>
             </Grid>
-            <Box sx={{ position: 'relative' }}>
+            {
+                !item.characteristics_features
+                    ? null
+                    : (
+                        <Box>
+                            <Grid spacing={2} container xs={12} md={12} lg={12} sx={{ color: "#042E76", margin: "10px 0", width: "100%" }}>
+                                {item.characteristics_features.map((e, i) => {
+                                    return (
+                                        <Grid item md={4} >
+                                            <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><ListItem disablePadding>
+                                                <ListItemIcon>
+                                                    <CircleIcon fontSize="small" />
+                                                </ListItemIcon>
+                                                <ListItemText primary={e} />
+                                            </ListItem>
+                                            </Grow>
+                                        </Grid>
+                                    )
+                                })}
+                            </Grid>
+                        </Box>
+                    )
+            }
+            <Box sx={{}}>
                 <Stack direction="row" spacing={1} sx={{ margin: "10% 0 3% 2%" }}>
                     <Chip label="Grid" variant={id === "grid" ? "filled" : "outlined"} onClick={() => handleClick("grid")} sx={{ width: "100px" }} />
                     <Chip label="List" variant={id === "list" ? "filled" : "outlined"} onClick={() => handleClick("list")} sx={{ width: "100px" }} />
@@ -154,7 +157,7 @@ const SinglePage = ({ resource, image1, image2, section, pageTitle }) => {
                     </div>
                 </Grid>
             </Box>
-        </Grid>
+        </Grid >
     )
 }
 

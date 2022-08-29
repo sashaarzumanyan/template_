@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route } from "react-router-dom";
 import AboutUs from './AboutPage/AboutUs';
 import Home from './Home/Home';
@@ -13,27 +13,56 @@ import Industries from './Industries/Industries';
 import SinglePage from './SinglePage';
 import { useSelector } from 'react-redux';
 import Jobs from './Jobs/Jobs';
+import SingleJob from './Jobs/SingleJob';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 
 const Main = () => {
-  const {singlePageInfo: {image1, section, image2, resource, pageTitle}} = useSelector(state => state)
+  const navigate = useNavigate();
+  const [jobId, setJobId] = useState();
+  const [selectedJob, setJob] = useState([]);
+  const { singlePageInfo: { image1, section, image2, resource, pageTitle } } = useSelector(state => state);
+
+  const handleClick = (id) => {
+    navigate("/job")
+    setJobId(id)
+    // debugger
+  };
+
+  useEffect(() => {
+    axios.get(`http://localhost:3001/jobs?id=${jobId}`)
+      .then(res => setJob(...res.data))
+  }, [jobId])
+
+  // const checkJob = (job) => {
+  //   if (job === []) {
+  //     debugger
+  //     // navigate("careers")
+  //   }
+  // }
+
+  console.log("sssssssssss", selectedJob);
+
+
   return (
-    <div style={{ width: '100%', height: 'auto'}}>
-        <Routes>
-          <Route path='' element={<Home />} />
-          <Route path='about-us' element={<AboutUs />} />
-          <Route path='technical-assistance' element={<Technical_Page />} />
-          <Route path='procurement' element={<Procurement />} />
-          <Route path='projects' element={<Projects />} />
-          <Route path='contacts' element={<Contact />} />
-          <Route path='successful-stories' element={<StoryPage />} />
-          <Route path='services' element={<Industries />} />
-          <Route path='details' element={<SinglePage section={section} image1={image1} image2={image2} resource={resource} pageTitle={pageTitle} />} />
-          <Route path='news' element={<News />} />
-          <Route path='careers' element={<Jobs />} />
-          <Route path="/login" element={<LoginForm />} />
-        </Routes>
+    <div style={{ width: '100%', height: 'auto' }}>
+      <Routes>
+        <Route path='' element={<Home />} />
+        <Route path='about-us' element={<AboutUs />} />
+        <Route path='technical-assistance' element={<Technical_Page />} />
+        <Route path='procurement' element={<Procurement />} />
+        <Route path='projects' element={<Projects />} />
+        <Route path='contacts' element={<Contact />} />
+        <Route path='successful-stories' element={<StoryPage />} />
+        <Route path='services' element={<Industries />} />
+        <Route path='details' element={<SinglePage section={section} image1={image1} image2={image2} resource={resource} pageTitle={pageTitle} />} />
+        <Route path='news' element={<News />} />
+        <Route path='careers' element={<Jobs handleClick={handleClick} />} />
+        <Route path="job" element={<SingleJob job={selectedJob}  />} />
+        <Route path="/login" element={<LoginForm />} />
+      </Routes>
     </div>
   )
 }
