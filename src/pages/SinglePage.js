@@ -51,7 +51,7 @@ const SinglePage = ({ resource, image1, image2, section, pageTitle }) => {
     console.log('item', item)
     return (
         <Grid container sx={{ padding: "4% 4% 10%" }}>
-            <Grid item xs={12} md={12} lg={6} sx={{ padding: "35px",  }} >
+            <Grid item xs={12} md={12} lg={6} sx={{ padding: "35px", height: {md:!item ? "60vh": "auto"}  }} >
                 <Grow in={true} style={{ transformOrigin: '1 0 0' }} {...({ timeout: 1500 })}><Typography variant='h2' sx={{ color: "#042E76", marginBottom: "40px", fontSize: { xs: "2rem", sm: "3.75rem" } }}>
                     {item.title ? item.title : singlePageInfo.pageTitle}
                 </Typography></Grow>

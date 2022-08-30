@@ -1,31 +1,39 @@
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import { Button, Divider, Grow, List, ListItem, ListItemText, Stack, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import BasicModal from '../../components/ModalWindow';
 
-const SingleJob = ({ job, checkJob }) => {
+
+const SingleJob = ({ jobId }) => {
     const navigate = useNavigate();
+    const [selectedJob, setJob] = useState([]);
+    const [isOpen, setOpen] = useState(false);
+    const handleClose = () => setOpen(false);
 
-    // useEffect(() => {        
-    //     checkJob()
-    // }, [])
+
+    useEffect(() => {
+        axios.get(`http://localhost:3001/jobs?id=${jobId}`)
+          .then(res => setJob(...res.data))
+      }, [jobId])
 
 
     return (
         <div style={{ margin: "4% 4%" }}>
             <Typography variant='h3' sx={{ color: "#042E76", marginBottom: "30px" }}>
-                <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}><div>{job?.name}</div></Grow>
+                <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}><div>{selectedJob?.name}</div></Grow>
             </Typography>
             <Divider textAlign="center" sx={{ width: "100%" }}>
                 <Stack direction="row" spacing={8}>
                     <Typography variant='p' >
                         <BookmarkIcon color='secondary' />
-                        <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}><div>{job?.jobTime}</div></Grow>
+                        <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}><div>{selectedJob?.jobTime}</div></Grow>
                     </Typography>
                     <Typography variant='p' >
                         <BookmarkIcon color='secondary' />
-                        <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}><div>{job?.location}</div></Grow>
+                        <Grow in={true} style={{ transformOrigin: '0 0 0' }} {...({ timeout: 1500 })}><div>{selectedJob?.location}</div></Grow>
                     </Typography>
                 </Stack>
             </Divider>
@@ -33,12 +41,12 @@ const SingleJob = ({ job, checkJob }) => {
                 <Stack spacing={4}>
                     <Typography variant='h6' color="text.secondary">Description</Typography>
                     <Typography variant='p' >
-                        {job?.description}
+                        {selectedJob?.description}
                     </Typography>
                     <Box>
                         <Typography variant='h6' color="text.secondary">Required qualifications</Typography>
                         <List dense={true}>
-                            {job?.requirements?.map((elem, index) => {
+                            {selectedJob?.requirements?.map((elem, index) => {
                                 return (
                                     <ListItem>
                                         <ListItemText
@@ -50,10 +58,11 @@ const SingleJob = ({ job, checkJob }) => {
                             })}
                         </List>
                     </Box>
-                    <Divider textAlign='center'><Button onClick={() => navigate("careers")} color='secondary' variant='outlined'>Apply</Button></Divider>
+                    <Divider textAlign='center'><Button onClick={() => setOpen(true)} color='secondary' variant='outlined'>Apply</Button></Divider>
 
                 </Stack>
             </Grow>
+            <BasicModal open={isOpen} handleClose={handleClose} />
         </div>
 
     )

@@ -8,10 +8,8 @@ import axios from 'axios';
 
 const Jobs = ({handleClick}) => {
     const { t } = useTranslation();
-    const [isOpen, setOpen] = useState(false);
     const [jobs, getJobs] = useState([]);
-
-    const handleClose = () => setOpen(false);
+    
 
     const teamSpecific = t("team_specific", { returnObjects: true });
 
@@ -61,7 +59,6 @@ const Jobs = ({handleClick}) => {
                     })}
                 </Grid>
             </Box>
-            <BasicModal open={isOpen} handleClose={handleClose} />
         </div>
     )
 }

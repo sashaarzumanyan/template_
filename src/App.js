@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import Header from "./components/Header/Header";
 import Main from "./pages/Main";
 import { useSelector } from 'react-redux'
+import AdminMain from './pages/Admin';
 
 
 
@@ -26,8 +27,9 @@ function App() {
       <Header offsetY={offsetY} scrollY={scrollY} />
       <main>
         <Main />
+        <AdminMain />
       </main>
-      <Footer />
+      {pathname === "/admin"? null : <Footer />}
     </div>
   );
 }

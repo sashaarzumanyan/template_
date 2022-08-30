@@ -15,14 +15,12 @@ import { useSelector } from 'react-redux';
 import Jobs from './Jobs/Jobs';
 import SingleJob from './Jobs/SingleJob';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 
 
 const Main = () => {
   const navigate = useNavigate();
-  const [jobId, setJobId] = useState();
-  const [selectedJob, setJob] = useState([]);
+  const [jobId, setJobId] = useState(1);
   const { singlePageInfo: { image1, section, image2, resource, pageTitle } } = useSelector(state => state);
 
   const handleClick = (id) => {
@@ -31,10 +29,7 @@ const Main = () => {
     // debugger
   };
 
-  useEffect(() => {
-    axios.get(`http://localhost:3001/jobs?id=${jobId}`)
-      .then(res => setJob(...res.data))
-  }, [jobId])
+
 
   // const checkJob = (job) => {
   //   if (job === []) {
@@ -42,9 +37,6 @@ const Main = () => {
   //     // navigate("careers")
   //   }
   // }
-
-  console.log("sssssssssss", selectedJob);
-
 
   return (
     <div style={{ width: '100%', height: 'auto' }}>
@@ -60,7 +52,7 @@ const Main = () => {
         <Route path='details' element={<SinglePage section={section} image1={image1} image2={image2} resource={resource} pageTitle={pageTitle} />} />
         <Route path='news' element={<News />} />
         <Route path='careers' element={<Jobs handleClick={handleClick} />} />
-        <Route path="job" element={<SingleJob job={selectedJob}  />} />
+        <Route path="job" element={<SingleJob jobId={jobId}  />} />
         <Route path="/login" element={<LoginForm />} />
       </Routes>
     </div>
