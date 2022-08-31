@@ -16,7 +16,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import HomeIcon from '@mui/icons-material/Home';
-import {sidebarConf} from './sidebarConfigs'
+import { sidebarConf } from './sidebarConfigs'
 
 const drawerWidth = 240;
 
@@ -44,18 +44,21 @@ function ResponsiveDrawer(props) {
             </Toolbar>
             <Divider />
             <List>
-                {sidebarConf.map(({title, icon}, index) => (
-                    <ListItem key={title} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {icon}
-                            </ListItemIcon>
-                            <ListItemText primary={title} />
-                        </ListItemButton>
-                    </ListItem>
+                {sidebarConf.map(({ title, icon }, index) => (
+                    <>
+                        <ListItem key={title} disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    {icon}
+                                </ListItemIcon>
+                                <ListItemText primary={title} />
+                            </ListItemButton>
+                        </ListItem>
+                        <Divider />
+                    </>
+
                 ))}
             </List>
-            <Divider />
         </div>
     );
 
@@ -63,7 +66,7 @@ function ResponsiveDrawer(props) {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
+            <ccc />
             <AppBar
                 // position="fixed"
                 sx={{
@@ -81,9 +84,6 @@ function ResponsiveDrawer(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    {/* <Typography variant="h6" noWrap component="div">
-            Responsive drawer
-          </Typography> */}
                 </Toolbar>
             </AppBar>
             <Box

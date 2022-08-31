@@ -2,12 +2,12 @@ import { Grid } from '@mui/material';
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import ResponsiveDrawer from './dashboard/AdminDrawer';
-import EnhancedTable from './AdminTable';
+import DataTable from './AdminTable';
 
 
 const AdminMain = () => {
     return (
-        <Grid container columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
+        <Grid container >
             <Grid item xs={0} md={2}>
                 <ResponsiveDrawer />
             </Grid>
@@ -16,9 +16,7 @@ const AdminMain = () => {
                 /* <Routes path="admin">
                     <Route path="projects" element={<EnhancedTable />} />
                 </Routes> */}
-                <EnhancedTable />
-                <EnhancedTable />
-                <EnhancedTable />
+                <DataTable />
 
             </Grid>
         </Grid>
