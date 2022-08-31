@@ -5,6 +5,8 @@ import Header from "./components/Header/Header";
 import Main from "./pages/Main";
 import { useSelector } from 'react-redux'
 import AdminMain from './pages/Admin';
+import { Routes, Route } from "react-router-dom";
+
 
 
 
@@ -24,10 +26,14 @@ function App() {
 
   return (
     <div className="App" style={{position: "relative"}}>
-      <Header offsetY={offsetY} scrollY={scrollY} />
+     {pathname === "/admin" ? null : <Header offsetY={offsetY} scrollY={scrollY} />}
       <main>
-        <Main />
-        <AdminMain />
+        <Routes>
+          <Route path='' element={<Main />} />
+          <Route path='admin'  element={<AdminMain />}/>
+        </Routes>
+        
+        
       </main>
       {pathname === "/admin"? null : <Footer />}
     </div>
