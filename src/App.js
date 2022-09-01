@@ -1,11 +1,9 @@
 import { useScroll } from 'framer-motion';
 import { useEffect } from "react";
-import Footer from './components/Footer/Footer';
-import Header from "./components/Header/Header";
-import Main from "./pages/Main";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import { Route, Routes } from "react-router-dom";
 import AdminMain from './pages/Admin';
-import { Routes, Route } from "react-router-dom";
+import Main from "./pages/Main";
 
 
 
@@ -20,22 +18,17 @@ function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    // debugger
   }, [pathname, singlePageInfo])
-  // const marginTop = useTransform(scrollY, offsetY, offsetY);
 
   return (
-    <div className="App" style={{position: "relative"}}>
-     {pathname === "/admin" ? null : <Header offsetY={offsetY} scrollY={scrollY} />}
+    <div className="App" style={{ position: "relative" }}>
       <main>
         <Routes>
-          <Route path='' element={<Main />} />
-          <Route path='admin'  element={<AdminMain />}/>
+          <Route path='*' element={<Main />} />
+          <Route path='admin/*' element={<AdminMain />} />
         </Routes>
-        
-        
+
       </main>
-      {pathname === "/admin"? null : <Footer />}
     </div>
   );
 }

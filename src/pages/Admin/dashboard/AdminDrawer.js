@@ -17,15 +17,23 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import HomeIcon from '@mui/icons-material/Home';
 import { sidebarConf } from './sidebarConfigs'
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
-    const { window } = props;
+    const { window, setActive } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const navigate = useNavigate();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
+    };
+
+    const handleClick= (path) => {
+        navigate(path)
+        setActive(path)
+        
     };
 
     const drawer = (
@@ -33,7 +41,7 @@ function ResponsiveDrawer(props) {
             <Toolbar>
                 <List>
                     <ListItem disablePadding>
-                        <ListItemButton>
+                        <ListItemButton onClick={() => handleClick("/")}>
                             <ListItemIcon>
                                 <HomeIcon />
                             </ListItemIcon>
@@ -44,10 +52,10 @@ function ResponsiveDrawer(props) {
             </Toolbar>
             <Divider />
             <List>
-                {sidebarConf.map(({ title, icon }, index) => (
+                {sidebarConf.map(({ title, icon, path}, index) => (
                     <>
-                        <ListItem key={title} disablePadding>
-                            <ListItemButton>
+                        <ListItem key={index} disablePadding>
+                            <ListItemButton onClick={() => handleClick(path)}>
                                 <ListItemIcon>
                                     {icon}
                                 </ListItemIcon>
@@ -66,7 +74,6 @@ function ResponsiveDrawer(props) {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <ccc />
             <AppBar
                 // position="fixed"
                 sx={{

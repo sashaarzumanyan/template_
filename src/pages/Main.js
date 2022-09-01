@@ -15,6 +15,8 @@ import { useSelector } from 'react-redux';
 import Jobs from './Jobs/Jobs';
 import SingleJob from './Jobs/SingleJob';
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 
 
 
@@ -40,6 +42,7 @@ const Main = () => {
 
   return (
     <div style={{ width: '100%', height: 'auto' }}>
+      <Header />
       <Routes>
         <Route path='' element={<Home />} />
         <Route path='about-us' element={<AboutUs />} />
@@ -52,9 +55,10 @@ const Main = () => {
         <Route path='details' element={<SinglePage section={section} image1={image1} image2={image2} resource={resource} pageTitle={pageTitle} />} />
         <Route path='news' element={<News />} />
         <Route path='careers' element={<Jobs handleClick={handleClick} />} />
-        <Route path="job" element={<SingleJob jobId={jobId}  />} />
+        <Route path="job" element={<SingleJob jobId={jobId} />} />
         <Route path="/login" element={<LoginForm />} />
       </Routes>
+      <Footer />
     </div>
   )
 }
