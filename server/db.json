@@ -6,7 +6,11 @@
       "location": "Yerevan",
       "jobTime": "Full Time",
       "id": "1",
-      "requirements": ["Good knowledge of English","Ability to interact, communicate and present ideas", "Bachelor’s degree "]
+      "requirements": [
+        "Good knowledge of English",
+        "Ability to interact, communicate and present ideas",
+        "Bachelor’s degree "
+      ]
     },
     {
       "name": "Job Name 2",
@@ -14,7 +18,11 @@
       "location": "Yerevan",
       "jobTime": "Full Time",
       "id": "2",
-      "requirements": ["Good knowledge of English","Ability to interact, communicate and present ideas", "Bachelor’s degree "]
+      "requirements": [
+        "Good knowledge of English",
+        "Ability to interact, communicate and present ideas",
+        "Bachelor’s degree "
+      ]
     },
     {
       "name": "Job Name 3",
@@ -22,7 +30,11 @@
       "location": "Yerevan",
       "jobTime": "Full Time",
       "id": "3",
-      "requirements": ["Good knowledge of English","Ability to interact, communicate and present ideas", "Bachelor’s degree "]
+      "requirements": [
+        "Good knowledge of English",
+        "Ability to interact, communicate and present ideas",
+        "Bachelor’s degree "
+      ]
     },
     {
       "name": "Job Name 4",
@@ -30,7 +42,11 @@
       "location": "Yerevan",
       "jobTime": "Full Time",
       "id": "4",
-      "requirements": ["Good knowledge of English","Ability to interact, communicate and present ideas", "Bachelor’s degree "]
+      "requirements": [
+        "Good knowledge of English",
+        "Ability to interact, communicate and present ideas",
+        "Bachelor’s degree "
+      ]
     }
   ],
   "Industries": [
@@ -97,7 +113,7 @@
       "title": "MISCELLANEOUS"
     }
   ],
-  "projects" : [
+  "projects": [
     {
       "title": "Agro-Industry, Marketing and Trade",
       "dateInfo": "Cyprus | 2022 — 2024",
@@ -146,6 +162,12 @@
       "text": "LATIN AMERICA and the CARIBBEAN “Lessons from the field: Strategies for effective implementation of Climate Focused",
       "image": "https://scontent-sof1-2.xx.fbcdn.net/v/t1.6435-9/193632449_513982213348586_3988750366261356774_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=e3f864&_nc_ohc=P7WHqo2b430AX9vGghX&_nc_ht=scontent-sof1-2.xx&oh=00_AT_d-swRRRoBh7uNIdecqPHtzlqYv-Iw8u8TwLKw_rEvxg&oe=632F2481",
       "category": "vodka"
+    },
+    {
+      "title": "Mmmmm",
+      "img": {},
+      "description": "<p>aaaaaaaaa</p>\n",
+      "id": 0.5067059242717291
     }
   ]
 }

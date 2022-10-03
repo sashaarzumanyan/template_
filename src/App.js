@@ -27,7 +27,6 @@ function App() {
           <Route path='*' element={<Main />} />
           <Route path='admin/*' element={<AdminMain />} />
         </Routes>
-
       </main>
     </div>
   );
